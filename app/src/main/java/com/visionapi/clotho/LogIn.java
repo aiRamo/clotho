@@ -32,9 +32,8 @@ import com.google.android.material.button.MaterialButton;
 public class LogIn extends AppCompatActivity{
 
     MaterialButton signUpButton;
-    Intent registration;
+    Intent registration, homepage;
 
-    private boolean isLoggedIn = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +41,8 @@ public class LogIn extends AppCompatActivity{
         setContentView(R.layout.activity_signin);
 
         //TODO: When the login button is clicked, check if both text fields contain 'admin', if they do, redirect the app to Homepage
+
+        homepage = new Intent(LogIn.this, MainActivity.class);
 
         EditText username = (EditText) findViewById(R.id.username);
         EditText password = (EditText) findViewById(R.id.Password);
@@ -52,6 +53,9 @@ public class LogIn extends AppCompatActivity{
             public void onClick(View view) {
                 if(username.getText().toString().equals("admin") && password.getText().toString().
                         equals("admin")){
+                    GlobalLoginChecker.isLoggedIn = true;
+                    startActivity(homepage);
+
                 }else{
                     Toast.makeText(LogIn.this,"Login Failed",Toast.LENGTH_SHORT).show();
                 }

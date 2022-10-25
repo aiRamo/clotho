@@ -34,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
-        startActivity(loginPage);
+
+        if (GlobalLoginChecker.isLoggedIn == false){
+            startActivity(loginPage);
+        }
+
 
         ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
         settingsButton.setOnClickListener( new View.OnClickListener()  {
