@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">clotho</string>
+    <string name="Search">Search</string>
+    <string name="MyProfile">MyProfile</string>
+    <string name="Outfit">Outfit</string>
+    <string name="Settings">Settings</string>
+    <string name="app_name">Clotho</string>
+
 </resources>
