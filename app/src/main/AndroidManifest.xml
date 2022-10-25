@@ -33,6 +33,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PreviewHandler"/>
+        <activity android:name=".CategorySelector"/>
+        <activity android:name=".Registration"/>
     </application>
 
 </manifest>
