@@ -27,6 +27,8 @@ public class LogIn extends AppCompatActivity{
     MaterialButton signUpButton;
     Intent registration;
 
+    private boolean isLoggedIn = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
