@@ -20,7 +20,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.android.material.button.MaterialButton;
+
 public class LogIn extends AppCompatActivity{
+
+    MaterialButton signUpButton;
+    Intent registration;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +34,16 @@ public class LogIn extends AppCompatActivity{
 
         //TODO: When the login button is clicked, check if both text fields contain 'admin', if they do, redirect the app to Homepage
 
+
+        signUpButton = findViewById(R.id.signup);
+        registration = new Intent(LogIn.this, Registration.class);
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(registration);
+            }
+        });
 
     }
 }
