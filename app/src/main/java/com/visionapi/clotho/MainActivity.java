@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button newEntryButton = findViewById(R.id.btn_newEntry);
-        Intent imagePreview = new Intent(MainActivity.this, PreviewHandler.class);
+
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
-        startActivity(new Intent(MainActivity.this, LogIn.class));
+        startActivity(loginPage);
 
         ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
         settingsButton.setOnClickListener( new View.OnClickListener()  {
