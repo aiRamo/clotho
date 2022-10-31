@@ -9,267 +9,156 @@
 
     <!--    //Sex-->
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="27dp"
-        android:text="Male"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="28dp"
-        android:text="Other"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="99dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="28dp"
-        android:text="Female"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <!--    //Male Clothing Sizes-->
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Small"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <CheckBox
-        android:id="@+id/checkBox17"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="1dp"
-        android:text="Medium"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox16"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <CheckBox
-        android:id="@+id/checkBox19"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="1dp"
-        android:text="X-Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox20"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox21"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="91dp"
-        android:text="XXX-Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox14"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="1dp"
-        android:text="X-Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox15"
-        app:layout_constraintStart_toEndOf="@+id/checkBox7" />
-
-    <CheckBox
-        android:id="@+id/checkBox8"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
-        android:text="XX-Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
-
-    <CheckBox
-        android:id="@+id/checkBox13"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="1dp"
-        android:text="Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox14"
-        app:layout_constraintStart_toEndOf="@+id/checkBox6" />
-
-    <CheckBox
-        android:id="@+id/checkBox20"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="2dp"
-        android:text="XX-Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox21"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox12"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="1dp"
-        android:text="Medium"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox13"
-        app:layout_constraintStart_toEndOf="@+id/checkBox5" />
-
-    <CheckBox
-        android:id="@+id/checkBox11"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="91dp"
-        android:text="XXX-Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox9" />
-
-    <CheckBox
-        android:id="@+id/checkBox18"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="1dp"
-        android:text="Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox19"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox7"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
-        android:text="X-Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
-
-    <CheckBox
-        android:id="@+id/checkBox16"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="62dp"
-        android:text="Small"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <CheckBox
-        android:id="@+id/checkBox10"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
-        android:text="Small"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:text="Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
-
-    <CheckBox
-        android:id="@+id/checkBox15"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="2dp"
-        android:text="XX-Large"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox11"
-        app:layout_constraintStart_toEndOf="@+id/checkBox8" />
-
-    <CheckBox
-        android:id="@+id/checkBox9"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
-        android:text="XXX-Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="103dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:text="Medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="268dp"
         android:layout_height="78dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:text="Select Gender"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textStyle="bold"
+        android:shadowColor="@color/purple_500"
+        android:shadowRadius="3"
+        android:shadowDx="1"
+        android:shadowDy="1"
         android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="301dp"
         android:layout_height="94dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="52dp"
         android:text="Select Size"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textStyle="bold"
+        android:shadowColor="@color/purple_500"
+        android:shadowRadius="3"
+        android:shadowDx="1"
+        android:shadowDy="1"
         android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox4"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+        app:layout_constraintVertical_bias="0.38" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="63dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="97dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox2"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="ProfileButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="ProfileButton"/>
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="260dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/maleChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="@color/purple_500"
+            android:outlineSpotShadowColor="@color/purple_500"
+            android:text="Male"
+            android:textColor="@color/purple_500"
+            android:textColorHighlight="@color/black"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/unisexChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unisex"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/femaleChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup2"
+        android:layout_width="205dp"
+        android:layout_height="244dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="109dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/smallChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Small"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/mediumChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/largeChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Large"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/extraLargeChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="X-Large"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/extraExtraLargeChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XX-Large"
+            android:textColor="@color/purple_500"
+            app:chipBackgroundColor="@color/white" />
+    </com.google.android.material.chip.ChipGroup>
 
 
     <!--    //Unisex Clothing sizes-->
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
