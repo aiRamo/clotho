@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#111619"
-    tools:context=".CategorySelector"
+    tools:context=".PreviewHandler"
     tools:ignore="LabelFor">
 
     <TextView
@@ -13,6 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/category_title"
+        android:shadowColor="@color/purple_500"
+        android:shadowRadius="10"
+        android:shadowDx="1"
+        android:shadowDy="1"
         android:textColor="#FAF8F8"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

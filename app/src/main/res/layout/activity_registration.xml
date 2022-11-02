@@ -12,10 +12,11 @@
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:textColorHighlight="@color/blue"
+        android:textSize="40sp"
         android:text="@string/title_activity_registration"
         android:textAlignment="center"
-        android:textColor="#FAF8F8"
-        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +98,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59000003"
-        tools:ignore="TextContrastCheck" />
+        android:background="@drawable/settingsIcon"
+        tools:srcCompat="@drawable/settingsIcon" />
+
 
     <EditText
         android:id="@+id/editTextTextPersonName3"

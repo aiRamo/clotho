@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/MyProfile"
         android:textColor="@color/purple_500"
-        android:textColorHighlight="@color/teal_200"
+        android:textColorHighlight="@color/blue"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,17 +104,21 @@
 
     <ImageButton
         android:id="@+id/setting"
-        android:layout_width="69dp"
-        android:layout_height="58dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+
         android:layout_marginStart="131dp"
         android:layout_marginTop="11dp"
+        android:backgroundTint="@color/white"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="1dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/Settings"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/settingsIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
