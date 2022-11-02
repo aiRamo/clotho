@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/MyProfile"
         android:textColor="@color/purple_500"
-        android:textColorHighlight="@color/teal_200"
+        android:textColorHighlight="@color/blue"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,6 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:background="@drawable/settingsIcon"
+        tools:srcCompat="@drawable/settingsIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

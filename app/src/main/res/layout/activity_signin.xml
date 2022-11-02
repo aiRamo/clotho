@@ -4,32 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <TextView
-        android:id = "@+id/signin"
+        android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "𝕊𝕚𝕘𝕟 𝕚𝕟"
-        android:textColor= "#AAA"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="𝕊𝕚𝕘𝕟 𝕚𝕟"
+        android:textColor="@color/blue"
         android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_margin="50dp"
-        android:gravity="center"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
+        android:text="Username"
         android:hint="𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎"
-        android:textColor= "#AAA"
+        android:textColor= "@color/blue_v2"
         android:textStyle="bold"
         android:layout_margin="10dp"
         android:padding="20dp"
         android:drawablePadding="20dp"/>
-
-    />
 
 
     <EditText
@@ -37,27 +40,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:hint="𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍"
-        android:textColor= "#AAA"
-        android:textStyle="bold"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:drawablePadding="20dp"
 
-
-        />
+        android:text="Password"
+        android:hint="𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍"
+        android:padding="20dp"
+        android:textColor="@color/blue_v2"
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginbtn"
         android:layout_below="@id/Password"
-        android:text="𝙻𝙾𝙶 𝙸𝙽"
-        android:backgroundTint= "@color/material_on_surface_stroke"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-
-        />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white_v2"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/blue"
+        android:text="𝙻𝙾𝙶 𝙸𝙽" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,7 +73,7 @@
         android:layout_below="@id/loginbtn"
         android:text="𝙵𝚘𝚛𝚐𝚘𝚝 𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍"
         android:textSize="20dp"
-        android:textColor= "#AAA"
+        android:textColor= "@color/blue_v2"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_margin="1dp"
@@ -78,9 +85,9 @@
         android:id="@+id/signup"
         android:layout_below="@id/forgotpass"
         android:text=" 𝚂𝙸𝙶𝙽 𝚄𝙿"
-
+        android:textColor="@color/white_v2"
         android:textStyle="bold"
-        android:backgroundTint= "@color/material_on_surface_stroke"
+        android:backgroundTint= "@color/blue"
         android:layout_centerHorizontal="true"
         android:layout_margin="1dp"
 
