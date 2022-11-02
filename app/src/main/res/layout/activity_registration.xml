@@ -4,118 +4,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#111619"
+    tools:context=".Registration"
+    tools:ignore="LabelFor">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/MyProfile"
         android:textColor="@color/purple_500"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"
+        android:text="@string/title_activity_registration"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <Button
-        android:id="@+id/btn_newEntry"
-        android:layout_width="match_parent"
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="New Photo"
+        android:text="@string/register_button"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_newEntry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        android:textColor="@android:color/white"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/outfit1"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="30dp"
-                android:background="#c1c1c1"
-                android:contentDescription="@string/Outfit"
-                android:src="@drawable/drip"
-                tools:ignore="DuplicateSpeakableTextCheck" />
-
-            <ImageButton
-                android:id="@+id/outfit2"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="30dp"
-                android:layout_marginTop="30dp"
-                android:background="#c1c1c1"
-                android:contentDescription="@string/Outfit"
-                android:src="@drawable/drip" />
-
-            <ImageButton
-                android:id="@+id/outfit3"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="30dp"
-                android:layout_marginTop="30dp"
-                android:background="#c1c1c1"
-                android:contentDescription="@string/Outfit"
-                android:src="@drawable/drip" />
-
-            <ImageButton
-                android:id="@+id/outfit4"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="30dp"
-                android:layout_marginTop="30dp"
-                android:background="#c1c1c1"
-                android:contentDescription="@string/Outfit"
-                android:src="@drawable/drip" />
-
-            <ImageButton
-                android:id="@+id/outfit5"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_margin="30dp"
-                android:layout_marginTop="30dp"
-                android:background="#c1c1c1"
-                android:contentDescription="@string/Outfit"
-                android:src="@drawable/drip" />
-
-        </LinearLayout>
-    </ScrollView>
-
-    <ImageButton
-        android:id="@+id/setting"
-        android:layout_width="69dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        android:contentDescription="@string/Settings"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="First name"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/prompt_firstname"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Last name"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/prompt_lastname"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Email address"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:text="@string/prompt_email"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:text="@string/prompt_password"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/settingsIcon"
         tools:srcCompat="@drawable/settingsIcon" />
 
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Gender"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/gender_selection"
+        android:textColor="#FAF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 </androidx.constraintlayout.widget.ConstraintLayout>
