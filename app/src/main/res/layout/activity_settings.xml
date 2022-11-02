@@ -62,8 +62,8 @@
         android:contentDescription="ProfileButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settingsIcon"
-        tools:srcCompat="@drawable/settingsIcon" />
+        android:background="@drawable/settings_icon"
+        tools:srcCompat="@drawable/settings_icon" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"

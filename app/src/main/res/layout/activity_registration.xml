@@ -90,7 +90,6 @@
         android:layout_height="wrap_content"
         android:autofillHints="Password"
         android:ems="10"
-        android:inputType="textPassword"
         android:minHeight="48dp"
         android:text="@string/prompt_password"
         android:textColor="#FAF8F8"
@@ -98,8 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settingsIcon"
-        tools:srcCompat="@drawable/settingsIcon" />
+        app:layout_constraintVertical_bias="0.59000003" />
 
 
     <EditText
