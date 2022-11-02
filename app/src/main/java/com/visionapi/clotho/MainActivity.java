@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Button categoryButton = findViewById(R.id.btn_newEntry);
         categoryButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PreviewHandler.class));
+                startActivity(new Intent(MainActivity.this, CategorySelector.class));
                 System.out.println("Category Button Clicked");
             }
         });
