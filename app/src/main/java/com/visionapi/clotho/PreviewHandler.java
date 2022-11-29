@@ -1,13 +1,5 @@
 package com.visionapi.clotho;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentValues;
@@ -22,7 +14,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.visionapi.clotho.R;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PreviewHandler extends AppCompatActivity {
 
@@ -31,7 +29,10 @@ public class PreviewHandler extends AppCompatActivity {
     Button retakePhotoButton, savePhotoButton;
     ImageView imagePreview;
 
+    ProductSearchAPIClient productSearchAPIClient = new ProductSearchAPIClient();
+
     Uri image_uri;
+
 
     ActivityResultLauncher<Intent> cameraResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -41,10 +42,10 @@ public class PreviewHandler extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         // set preview image box to image_uri - converted photo.
                         imagePreview.setImageURI(image_uri);
+                        Toast.makeText(PreviewHandler.this, "Image converted to Bitmap == ",Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-
 
 
     @Override
@@ -55,6 +56,7 @@ public class PreviewHandler extends AppCompatActivity {
         imagePreview = findViewById(R.id.iv_preview);
         retakePhotoButton = findViewById(R.id.btn_retakePhoto);
         savePhotoButton = findViewById(R.id.btn_savePhoto); //TODO: save photo for further processing
+
 
         //retake photo button handling vvvvvvvvv
         retakePhotoButton.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +84,15 @@ public class PreviewHandler extends AppCompatActivity {
             }
         });
         //retake photo button handling ^^^^^^^^
+
+        savePhotoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ;
+            }
+        });
     }
+
 
     private void openCamera() {
         ContentValues values = new ContentValues();
@@ -114,4 +124,6 @@ public class PreviewHandler extends AppCompatActivity {
             }
         }
     }
+
+
 }
