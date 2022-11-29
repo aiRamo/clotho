@@ -40,24 +40,24 @@ public class LogIn extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        //TODO: When the login button is clicked, check if both text fields contain 'admin', if they do, redirect the app to Homepage
-
         homepage = new Intent(LogIn.this, MainActivity.class);
 
-        EditText username = (EditText) findViewById(R.id.username);
-        EditText password = (EditText) findViewById(R.id.Password);
-        MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
+        final EditText username = (EditText) findViewById(R.id.username);
+        final EditText password = (EditText) findViewById(R.id.Password);
+        final MaterialButton login = (MaterialButton) findViewById(R.id.loginbtn);
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().
-                        equals("admin")){
-                    GlobalLoginChecker.isLoggedIn = true;
-                    startActivity(homepage);
+                final String userName = username.getText().toString();
+                final String passWord = password.getText().toString();
 
-                }else{
-                    Toast.makeText(LogIn.this,"Login Failed",Toast.LENGTH_SHORT).show();
+
+                if(userName.isEmpty() || passWord.isEmpty()){
+                    Toast.makeText(LogIn.this, "Please enter your username or password",Toast.LENGTH_SHORT).show();
+                }
+                else{
+
                 }
             }
         });
@@ -74,6 +74,8 @@ public class LogIn extends AppCompatActivity{
                 startActivity(registration);
             }
         });
+
+    // Need RegisterButton code but keeps showing error
 
     }
 }
