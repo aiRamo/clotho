@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953214857567",
+    "project_id": "clotho-a9c47",
+    "storage_bucket": "clotho-a9c47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953214857567:android:03c526b2fb438f67a046ea",
+        "android_client_info": {
+          "package_name": "com.visionapi.clotho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953214857567-5k24t80m77s0veais9pvo4gjmqms2ueb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroPdo_2izBAYooo9Uc2dogqwTqNzQmPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953214857567-5k24t80m77s0veais9pvo4gjmqms2ueb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
