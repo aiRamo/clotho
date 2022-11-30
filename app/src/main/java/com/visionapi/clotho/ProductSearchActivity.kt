@@ -17,6 +17,7 @@
 package com.visionapi.clotho
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
@@ -36,6 +37,7 @@ import com.bumptech.glide.Glide
 import com.visionapi.clotho.api.ProductSearchAPIClient
 import com.visionapi.clotho.databinding.ActivityProductSearchBinding
 import com.visionapi.clotho.api.ProductSearchResult
+import kotlinx.android.synthetic.main.activity_product_search.*
 
 class ProductSearchActivity : AppCompatActivity() {
 
@@ -61,6 +63,14 @@ class ProductSearchActivity : AppCompatActivity() {
 
         // Initialize an API client for Vision API Product Search
         apiClient = ProductSearchAPIClient(this)
+
+        tvRedirect.setOnClickListener {
+            Toast.makeText(this, "clicked on redirect.", Toast.LENGTH_SHORT).show()
+        }
+
+        btnRetry.setOnClickListener {
+            startActivity(Intent(this, ProductSearchAPIClient::class.java))
+        }
     }
 
     private fun initViews() {
@@ -103,6 +113,10 @@ class ProductSearchActivity : AppCompatActivity() {
      */
     private fun showSearchResult(result: List<ProductSearchResult>) {
         viewBinding.progressBar.visibility = View.GONE
+        viewBinding.tvSearchResults.visibility = View.VISIBLE
+        viewBinding.searchDivider.visibility = View.VISIBLE
+        viewBinding.searchDivider2.visibility = View.VISIBLE
+        viewBinding.tvRedirect.visibility = View.VISIBLE
 
         // Update the recycler view to display the search result.
         (viewBinding.recyclerView.adapter as? ProductSearchAdapter)?.submitList(
@@ -162,9 +176,8 @@ class ProductSearchAdapter :
         @SuppressLint("SetTextI18n")
         fun bind(product: ProductSearchResult) {
             with(itemView) {
-                findViewById<TextView>(R.id.tvProductName).text = "Name: ${product.name}"
                 findViewById<TextView>(R.id.tvProductScore).text = "Similarity score: ${product.score}"
-                findViewById<TextView>(R.id.tvProductLabel).text = "Labels: ${product.label}"
+                findViewById<TextView>(R.id.tvProductLabel).text = "${product.label}"
                 // Show the image using Glide
                 Glide.with(itemView).load(product.imageUri).into(findViewById(R.id.ivProduct))
             }

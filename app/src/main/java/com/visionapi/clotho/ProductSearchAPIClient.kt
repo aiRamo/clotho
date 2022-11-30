@@ -31,9 +31,7 @@ class ProductSearchAPIClient : AppCompatActivity() {
         private const val REQUEST_IMAGE_CAPTURE = 1000
         private const val REQUEST_IMAGE_GALLERY = 1001
         private const val TAKEN_BY_CAMERA_FILE_NAME = "MLKitDemo_"
-        private const val IMAGE_PRESET_1 = "Preset1.jpg"
-        private const val IMAGE_PRESET_2 = "Preset2.jpg"
-        private const val IMAGE_PRESET_3 = "Preset3.jpg"
+        private const val IMAGE_PRESET_2 = "Preset2.png"
         private const val TAG = "MLKit-ODT"
     }
 
