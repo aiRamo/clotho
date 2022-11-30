@@ -63,8 +63,6 @@ public class LogIn extends AppCompatActivity{
         });
 
 
-
-
         signUpButton = findViewById(R.id.signup);
         registration = new Intent(LogIn.this, Registration.class);
 
@@ -74,8 +72,5 @@ public class LogIn extends AppCompatActivity{
                 startActivity(registration);
             }
         });
-
-    // Need RegisterButton code but keeps showing error
-
     }
 }
