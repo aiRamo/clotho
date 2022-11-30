@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settingsIcon"
-        tools:srcCompat="@drawable/settingsIcon" />
+        android:background="@drawable/settingsicon"
+        tools:srcCompat="@drawable/settingsicon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

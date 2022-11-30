@@ -25,7 +25,7 @@
         android:shadowRadius="3"
         android:shadowDx="1"
         android:shadowDy="1"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:shadowRadius="3"
         android:shadowDx="1"
         android:shadowDy="1"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,8 +62,8 @@
         android:contentDescription="ProfileButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settingsIcon"
-        tools:srcCompat="@drawable/settingsIcon" />
+        android:background="@drawable/settingsicon"
+        tools:srcCompat="@drawable/settingsicon" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"

@@ -20,17 +20,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
-public class MainActivity extends AppCompatActivity {
+public class CategorySelector extends AppCompatActivity {
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_category_selector);
 
-
-
+        //ImagePreview Button
         Button newEntryButton = findViewById(R.id.btn_newEntry);
         Intent imagePreview = new Intent(MainActivity.this, PreviewHandler.class);
 
@@ -41,24 +40,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Settings Button
-        ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
-        settingsButton.setOnClickListener( new View.OnClickListener()  {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Settings.class));
-                System.out.println("Settings Button Clicked");
-            }
-        });
-        //
 
 
-        Button categoryButton = (Button)findViewById(R.id.btn_newEntry);
-        categoryButton.setOnClickListener( new View.OnClickListener()  {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PreviewHandler.class));
-                System.out.println("Category Button Clicked");
-            }
-        });
     }
 
 }
