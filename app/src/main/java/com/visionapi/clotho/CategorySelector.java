@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
@@ -26,10 +27,12 @@ public class CategorySelector extends AppCompatActivity {
     Button TakePhoto;
     Uri image_uri;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_selector);
+
 
         TakePhoto = findViewById(R.id.btn_takePhoto);
         Intent imagePreview = new Intent(CategorySelector.this, PreviewHandler.class);
@@ -41,6 +44,7 @@ public class CategorySelector extends AppCompatActivity {
 
                 startActivity(imagePreview);
 
+
             }
         });
 
@@ -48,3 +52,4 @@ public class CategorySelector extends AppCompatActivity {
     }
 
 }
+

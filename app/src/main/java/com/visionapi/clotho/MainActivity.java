@@ -32,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button newEntryButton = findViewById(R.id.btn_newEntry);
 
+
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
 
         if (GlobalLoginChecker.isLoggedIn == false){
             startActivity(loginPage);
         }
+
 
 
         ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
@@ -47,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Settings Button Clicked");
             }
         });
+
         Button categoryButton = findViewById(R.id.btn_newEntry);
+
         categoryButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CategorySelector.class));
