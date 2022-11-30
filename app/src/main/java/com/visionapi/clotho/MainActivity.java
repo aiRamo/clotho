@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         Button newEntryButton = findViewById(R.id.btn_newEntry);
-        Intent imagePreview = new Intent(MainActivity.this, PreviewHandler.class);
 
-        newEntryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(imagePreview);
-            }
-        });
 
-        //Settings Button
+        Intent loginPage = new Intent(MainActivity.this, LogIn.class);
+
+
+        if (GlobalLoginChecker.isLoggedIn == false){
+            startActivity(loginPage);
+        }
+
+
+
         ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
         settingsButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
@@ -49,13 +49,12 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Settings Button Clicked");
             }
         });
-        //
 
+        Button categoryButton = findViewById(R.id.btn_newEntry);
 
-        Button categoryButton = (Button)findViewById(R.id.btn_newEntry);
         categoryButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PreviewHandler.class));
+                startActivity(new Intent(MainActivity.this, CategorySelector.class));
                 System.out.println("Category Button Clicked");
             }
         });

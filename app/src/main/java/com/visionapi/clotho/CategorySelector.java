@@ -15,13 +15,17 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-
+import android.widget.Toast;
 
 public class CategorySelector extends AppCompatActivity {
 
+    public static final int PERMISSION_CODE = 1000;
+    Button TakePhoto;
+    Uri image_uri;
 
 
     @Override
@@ -29,19 +33,23 @@ public class CategorySelector extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_selector);
 
-        //ImagePreview Button
-        Button newEntryButton = findViewById(R.id.btn_newEntry);
-        Intent imagePreview = new Intent(MainActivity.this, PreviewHandler.class);
 
-        newEntryButton.setOnClickListener(new View.OnClickListener() {
+        TakePhoto = findViewById(R.id.btn_takePhoto);
+        Intent imagePreview = new Intent(CategorySelector.this, PreviewHandler.class);
+
+
+        TakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(imagePreview);
+
+
             }
         });
-
 
 
     }
 
 }
+
