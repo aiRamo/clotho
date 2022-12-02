@@ -19,7 +19,10 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class CategorySelector extends AppCompatActivity {
 
@@ -32,7 +35,6 @@ public class CategorySelector extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_selector);
-
 
         TakePhoto = findViewById(R.id.btn_takePhoto);
         Intent imagePreview = new Intent(CategorySelector.this, PreviewHandler.class);
@@ -47,7 +49,31 @@ public class CategorySelector extends AppCompatActivity {
 
             }
         });
-
+        //Checks to see if pants button is clicked and will than show the take photo button
+        Button b = (Button) findViewById(R.id.btn_takePhoto);
+        ToggleButton pantsbutton = (ToggleButton) findViewById(R.id.Pants);
+        pantsbutton.setOnClickListener( new View.OnClickListener()  {
+            public void onClick(View v) {
+                b.setVisibility(View.VISIBLE);
+                System.out.println("Pants Selector Clicked");
+            }
+        });
+        //Checks shirts
+        ToggleButton shirtbutton = (ToggleButton) findViewById(R.id.button3);
+        shirtbutton.setOnClickListener( new View.OnClickListener()  {
+            public void onClick(View v) {
+                b.setVisibility(View.VISIBLE);
+                System.out.println("Shirts Selector Clicked");
+            }
+        });
+        //Checks shoes
+        ToggleButton shoebutton = (ToggleButton) findViewById(R.id.button3);
+        shoebutton.setOnClickListener( new View.OnClickListener()  {
+            public void onClick(View v) {
+                b.setVisibility(View.VISIBLE);
+                System.out.println("Shoes Selector Clicked");
+            }
+        });
 
     }
 

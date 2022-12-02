@@ -9,5 +9,7 @@
     <color name="white_v2">#FBFAF8</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple_v2">#E88EED</color>
+    <color name="teal_200"> #008080</color>
+    <color name="teal_700"> #025043</color>
     <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
 </resources>
