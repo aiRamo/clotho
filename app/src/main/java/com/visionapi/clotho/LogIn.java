@@ -41,8 +41,15 @@ public class LogIn extends AppCompatActivity{
                 else{
 
                 }
+
+                if (userName.equals("admin") && passWord.equals("admin")){
+                    GlobalLoginChecker.isLoggedIn=true;
+                    startActivity(homepage);
+                }
             }
         });
+
+
 
 
         signUpButton = findViewById(R.id.signup);
@@ -54,5 +61,9 @@ public class LogIn extends AppCompatActivity{
                 startActivity(registration);
             }
         });
+
+    // Need RegisterButton code but keeps showing error
+
+
     }
 }
