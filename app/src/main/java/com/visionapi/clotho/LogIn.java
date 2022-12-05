@@ -66,15 +66,22 @@ public class LogIn extends AppCompatActivity{
             }
         });
 
-    // Need RegisterButton code but keeps showing error
+
     signUpButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
-
             // opens Registration Activity
             startActivity(new Intent(LogIn.this,Registration.class));
+        }
+    });
 
+    // Taking us from the login btn to the splash page
+    login.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // Use Intent to move from one activity page to another
+            Intent intent = new Intent(LogIn.this,MainActivity.class);
+            startActivity(intent);
         }
     });
 

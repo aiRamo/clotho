@@ -2,6 +2,7 @@ package com.visionapi.clotho;
 
 import static com.google.firebase.database.FirebaseDatabase.*;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -103,6 +104,16 @@ public class Registration extends AppCompatActivity {
            // }
         //});
 
+        // when we click the register button we will be directed
+        // to our new user splash page
+        registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Use Intent to move from one activity page to another
+                Intent intent = new Intent(Registration.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
