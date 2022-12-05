@@ -21,6 +21,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -45,7 +46,11 @@ class ProductSearchActivity : AppCompatActivity() {
         const val TAG = "ProductSearchActivity"
         const val CROPPED_IMAGE_FILE_NAME = "MLKitCroppedFile_"
         const val REQUEST_TARGET_IMAGE_PATH = "REQUEST_TARGET_IMAGE_PATH"
+
+        val openURL = Intent(android.content.Intent.ACTION_VIEW)
+
     }
+
 
     private lateinit var viewBinding: ActivityProductSearchBinding
     private lateinit var apiClient: ProductSearchAPIClient
@@ -66,11 +71,14 @@ class ProductSearchActivity : AppCompatActivity() {
 
         tvRedirect.setOnClickListener {
             Toast.makeText(this, "clicked on redirect.", Toast.LENGTH_SHORT).show()
+            openURL.data =  Uri.parse("http://www.amazon.com/gp/mas/dl/android?s=brown%20boot%20womens")
+            startActivity(openURL)
         }
 
         btnRetry.setOnClickListener {
             startActivity(Intent(this, ProductSearchAPIClient::class.java))
         }
+
     }
 
     private fun initViews() {

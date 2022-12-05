@@ -14,7 +14,6 @@ import com.google.android.material.button.MaterialButton;
 
 public class LogIn extends AppCompatActivity{
 
-    MaterialButton signUpButton;
     Intent registration, homepage;
 
 
@@ -55,36 +54,14 @@ public class LogIn extends AppCompatActivity{
         });
 
 
-
-
-        //signUpButton = findViewById(R.id.signup);
-        registration = new Intent(LogIn.this, Registration.class);
-
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(registration);
+                // opens Registration Activity
+                startActivity(new Intent(LogIn.this,Registration.class));
             }
         });
 
-
-    signUpButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // opens Registration Activity
-            startActivity(new Intent(LogIn.this,Registration.class));
-        }
-    });
-
-    // Taking us from the login btn to the splash page
-    login.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // Use Intent to move from one activity page to another
-            Intent intent = new Intent(LogIn.this,MainActivity.class);
-            startActivity(intent);
-        }
-    });
 
     }
 }
