@@ -57,6 +57,8 @@
         <activity android:name=".CategorySelector"/>
         <activity android:name=".Registration"/>
         <activity android:name=".LogIn"/>
+
+
     </application>
 
 </manifest>
