@@ -10,11 +10,10 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity {
-    private Spinner spinnertextsize;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //shoe size drop down
-        spinnertextsize = findViewById(R.id.dropdown);
+        Spinner spinnertextsize = findViewById(R.id.dropdown);
         String[] shoeSizes = getResources().getStringArray(R.array.shoe_sizes);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, shoeSizes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
