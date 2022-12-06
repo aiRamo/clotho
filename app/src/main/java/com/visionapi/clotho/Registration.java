@@ -2,8 +2,11 @@ package com.visionapi.clotho;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Registration extends AppCompatActivity {
+public class Registration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     // create object of DatabaseReference class to access firebase's Realtime Database
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/");
 
@@ -30,7 +33,19 @@ public class Registration extends AppCompatActivity {
         final EditText lastname = findViewById(R.id.editTextTextPersonName2);
         final EditText email = findViewById(R.id.editTextTextEmailAddress);
         final EditText CreatePassword = findViewById(R.id.editTextTextPassword);
-        final EditText gender = findViewById(R.id.editTextTextPersonName3);
+
+
+        final Spinner gender = findViewById(R.id.editTextTextPersonName3);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.spinner_items,
+                R.layout.color_spinner_layout
+        );
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        gender.setAdapter(adapter);
+        gender.setOnItemSelectedListener(this);
+
+
 
 
         final Button registerbtn = findViewById(R.id.registerButton);
@@ -49,11 +64,11 @@ public class Registration extends AppCompatActivity {
                 final String lastNameTxt = lastname.getText().toString();
                 final String emailTxt = email.getText().toString();
                 final String passwordTxt = CreatePassword.getText().toString();
-                final String genderTxt = gender.getText().toString();
+                final String genderTxt = gender.getSelectedItem().toString();
 
                 // check if the user fills all the fields before sending data to firebase
                 if(fullNameTxt.isEmpty() || lastNameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()
-                        || genderTxt.isEmpty()){
+                        || genderTxt.equals("Gender:")){
                     Toast.makeText(Registration.this, "Please fill out all fields",Toast.LENGTH_SHORT).show();
                 }
 
@@ -107,4 +122,13 @@ public class Registration extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, parent.getSelectedItem().toString(), Toast.LENGTH_SHORT);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
