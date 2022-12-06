@@ -58,22 +58,7 @@ public class CategorySelector extends AppCompatActivity {
                 System.out.println("Pants Selector Clicked");
             }
         });
-        //Checks shirts
-        ToggleButton shirtbutton = (ToggleButton) findViewById(R.id.button3);
-        shirtbutton.setOnClickListener( new View.OnClickListener()  {
-            public void onClick(View v) {
-                b.setVisibility(View.VISIBLE);
-                System.out.println("Shirts Selector Clicked");
-            }
-        });
-        //Checks shoes
-        ToggleButton shoebutton = (ToggleButton) findViewById(R.id.button3);
-        shoebutton.setOnClickListener( new View.OnClickListener()  {
-            public void onClick(View v) {
-                b.setVisibility(View.VISIBLE);
-                System.out.println("Shoes Selector Clicked");
-            }
-        });
+
 
     }
 

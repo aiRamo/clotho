@@ -42,37 +42,7 @@
         app:layout_constraintVertical_bias="0.355"
 
         />
-
-    <ToggleButton
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FAF8F8"
-        android:textOff="Shirts"
-        android:textOn="Shirts"
-        android:textSize="24sp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
-
-    <ToggleButton
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FAF8F8"
-        android:textOff="Shoes"
-        android:textOn="Shoes"
-        android:textSize="24sp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+    
 
     <Button
         android:visibility="invisible"
