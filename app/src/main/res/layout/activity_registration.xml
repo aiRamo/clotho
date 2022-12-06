@@ -36,6 +36,7 @@
         app:layout_constraintVertical_bias="0.92"
         android:textColor="@android:color/white"/>
 
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
@@ -48,9 +49,10 @@
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -64,9 +66,10 @@
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -80,9 +83,10 @@
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -95,10 +99,10 @@
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59000003" />
-
+        app:layout_constraintVertical_bias="0.715" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -112,7 +116,9 @@
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.594" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
