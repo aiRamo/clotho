@@ -5,7 +5,17 @@
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,7 +25,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Clotho"
-        tools:targetApi="31" >
+        tools:targetApi="30" >
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.visionapi.clotho.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <activity
             android:name=".Settings"
             android:exported="false" >
@@ -32,10 +52,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PreviewHandler"/>
+        <activity android:name=".ProductSearchAPIClient"/>
+        <activity android:name=".ProductSearchActivity"/>
         <activity android:name=".CategorySelector"/>
         <activity android:name=".Registration"/>
         <activity android:name=".LogIn"/>
+
+
     </application>
 
 </manifest>

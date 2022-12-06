@@ -65,9 +65,11 @@
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/settingsicon" />
+
 
 
     <com.google.android.material.chip.ChipGroup
