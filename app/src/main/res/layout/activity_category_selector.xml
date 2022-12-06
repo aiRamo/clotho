@@ -42,7 +42,36 @@
         app:layout_constraintVertical_bias="0.355"
 
         />
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="Color:"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <Spinner
+            android:id="@+id/colorSpinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="65dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:spinnerMode="dialog"
+            android:background="@drawable/color_blob"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
 
     <Button
         android:visibility="invisible"
@@ -53,6 +82,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
