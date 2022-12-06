@@ -45,7 +45,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/prompt_firstname"
+        android:hint="First name"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
 
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
@@ -63,13 +64,32 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/prompt_lastname"
+        android:hint="@string/prompt_lastname"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
+
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumberText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <EditText
+        android:id="@+id/phoneNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Last name"
+        android:ems="10"
+        android:hint="@string/prompt_phoneNumber"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF8F8"
 
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
         app:layout_constraintVertical_bias="0.37" />
 
     <EditText
@@ -80,7 +100,8 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:text="@string/prompt_email"
+        android:hint="@string/prompt_email"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +116,8 @@
         android:autofillHints="Password"
         android:ems="10"
         android:minHeight="48dp"
-        android:text="@string/prompt_password"
+        android:hint="@string/prompt_password"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +138,7 @@
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

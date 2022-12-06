@@ -9,6 +9,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">Login failed</string>
     <string name="prompt_firstname">First name</string>
+    <string name="prompt_phoneNumber">Phone Number</string>
     <string name="prompt_lastname">Last name</string>
     <string name="register_button">Register</string>
     <string name="gender_selection">Gender</string>
