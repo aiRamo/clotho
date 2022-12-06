@@ -8,4 +8,7 @@
         <item name="android:scaleType">centerCrop</item>
         <item name="android:src">@drawable/ic_default_image</item>
     </style>
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+    </style>
 </resources>
