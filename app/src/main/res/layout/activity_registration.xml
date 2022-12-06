@@ -8,6 +8,7 @@
     tools:context=".Registration"
     tools:ignore="LabelFor">
 
+
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
@@ -133,9 +134,11 @@
         android:autofillHints="Gender"
         android:entries="@array/spinner_items"
         android:minHeight="48dp"
+
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumberText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
