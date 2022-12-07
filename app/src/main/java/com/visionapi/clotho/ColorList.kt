@@ -1,6 +1,6 @@
 package com.visionapi.clotho
 
-class ColorList
+public class ColorList
 {
     private val blackHex = "000000"
     private val whiteHex = "FFFFFF"

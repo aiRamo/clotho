@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.visionapi.clotho.databinding.ActivityMainBinding;
+
 
 public class CategorySelector extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -18,16 +20,19 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
     Button TakePhoto;
     Uri image_uri;
 
-
+    ColorObject selectedColor;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_category_selector);
 
         TakePhoto = findViewById(R.id.btn_takePhoto);
         Intent kotlinPreview = new Intent(CategorySelector.this, ProductSearchAPIClient.class);
 
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         TakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +88,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }
 
