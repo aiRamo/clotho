@@ -7,11 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,23 +40,36 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         });
         //Checks to see if pants button is clicked and will than show the take photo button
         Button b = (Button) findViewById(R.id.btn_takePhoto);
-        Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
+        /*Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
         pantsbutton.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 b.setVisibility(View.VISIBLE);
                 System.out.println("Color Selector Clicked");
             }
-        });
+        });*/
+
+        Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.shoe_sizes,
+                R.layout.color_spinner_layout
+        );
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        pantsbutton.setAdapter(adapter);
+        pantsbutton.setOnItemSelectedListener(this);{
+            b.setVisibility(View.VISIBLE);
+        }
 
         /// Color Drop down
-        String[] colorList = {"1", "2", "3", "4", "5","6","7","8","9","10","11","12","13","14"};
+        /*String[] colorList = {"1", "2", "3", "4", "5","6","7","8","9","10","11","12","13","14"};
         setContentView(R.layout.activity_category_selector);
         Spinner spin = (Spinner) findViewById(R.id.colorSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, colorList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
-        spin.setOnItemSelectedListener(this);
+        spin.setOnItemSelectedListener(this);*/
 
 
     }

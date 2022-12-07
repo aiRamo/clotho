@@ -39,7 +39,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
         final Spinner gender = findViewById(R.id.editTextTextPersonName3);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.shoe_sizes,
+                R.array.spinner_items,
                 R.layout.color_spinner_layout
         );
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
