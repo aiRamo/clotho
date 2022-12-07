@@ -46,7 +46,7 @@ public class LogIn extends AppCompatActivity{
                 }
 
                 if (userName.equals("admin") && passWord.equals("admin")){
-                    GlobalLoginChecker.isLoggedIn=true;
+                    GlobalVars.isLoggedIn=true;
                     startActivity(homepage);
                 }
             }

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
 
-        if (GlobalLoginChecker.isLoggedIn == false){
+        if (GlobalVars.isLoggedIn == false){
             startActivity(loginPage);
         }
 

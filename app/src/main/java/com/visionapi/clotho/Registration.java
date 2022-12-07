@@ -68,6 +68,15 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                 final String passwordTxt = CreatePassword.getText().toString();
                 final String genderTxt = gender.getSelectedItem().toString();
 
+                //JUST FOR TESTING SAVE FEATURE, DISREGARD LATER...
+
+                GlobalVars.fullNameTxt_Global = fullNameTxt;
+                GlobalVars.lastNameTxt_Global = lastNameTxt;
+                GlobalVars.phoneTxt_Global = phoneTxt;
+                GlobalVars.emailTxt_Global = emailTxt;
+                GlobalVars.passwordTxt_Global = passwordTxt;
+                GlobalVars.genderTxt_Global = genderTxt;
+
                 // check if the user fills all the fields before sending data to firebase
                 if(fullNameTxt.isEmpty() || lastNameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()
                         || genderTxt.equals("Gender:") || phoneTxt.isEmpty()){

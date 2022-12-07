@@ -30,17 +30,23 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.database.*
 import com.visionapi.clotho.api.ProductSearchAPIClient
-import com.visionapi.clotho.databinding.ActivityProductSearchBinding
 import com.visionapi.clotho.api.ProductSearchResult
+import com.visionapi.clotho.databinding.ActivityProductSearchBinding
 import kotlinx.android.synthetic.main.activity_product_search.*
-import java.lang.Math.ceil
+import kotlinx.android.synthetic.main.activity_registration.*
+import java.util.*
+
+data class SaveDataModel(
+    var imageuri: String? = null,
+    var amazonLink: String? = null
+)
 
 class ProductSearchActivity : AppCompatActivity() {
 
@@ -56,12 +62,16 @@ class ProductSearchActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityProductSearchBinding
     private lateinit var apiClient: ProductSearchAPIClient
+    private lateinit var amazonLink: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityProductSearchBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
         initViews()
+        amazonLink = "http://www.amazon.com/gp/mas/dl/android?s=brown%20boot%20womens"
 
         // Receive the query image and show it on the screen
         intent.getStringExtra(REQUEST_TARGET_IMAGE_PATH)?.let { absolutePath ->
@@ -73,7 +83,7 @@ class ProductSearchActivity : AppCompatActivity() {
 
         tvRedirect.setOnClickListener {
             Toast.makeText(this, "clicked on redirect.", Toast.LENGTH_SHORT).show()
-            openURL.data =  Uri.parse("http://www.amazon.com/gp/mas/dl/android?s=brown%20boot%20womens")
+            openURL.data =  Uri.parse(amazonLink)
             startActivity(openURL)
         }
 
@@ -109,10 +119,25 @@ class ProductSearchActivity : AppCompatActivity() {
 
         viewBinding.btnSave.setOnClickListener {
 
+            val savedData = SaveDataModel(GlobalVars.uri.toString(), amazonLink)
+
+            val databaseReference = FirebaseDatabase.getInstance()
+                .getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/")
+
+            databaseReference.child("users").child(GlobalVars.phoneTxt_Global)
+                .child("Saved Searches").child(getTimeEpoch()).setValue(savedData)
+                .addOnCompleteListener {
+                    Toast.makeText(this, "data insert success", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
+
         }
     }
 
-
+    private fun getTimeEpoch(): String {
+        return Date().time.toString();
+    }
 
     /**
      * Use Product Search API to search with the given query image

@@ -149,6 +149,8 @@ class ProductSearchAPIClient : AppCompatActivity() {
                         "com.visionapi.clotho.fileprovider",
                         it
                     )
+
+                    GlobalVars.uri = cameraPhotoUri.toString()
                     // Setting output file to take a photo
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraPhotoUri)
                     // Open camera based Intent.
