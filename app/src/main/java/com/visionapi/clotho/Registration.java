@@ -80,7 +80,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             // check if email is not registered before
                             if(snapshot.hasChild(phoneTxt)){
-                                Toast.makeText(Registration.this, "Email is already in use", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registration.this, "Phone Number is already in use", Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 // send data to firebase Realtime Database

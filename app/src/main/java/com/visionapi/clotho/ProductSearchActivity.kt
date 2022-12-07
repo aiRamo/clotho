@@ -30,6 +30,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -99,11 +100,19 @@ class ProductSearchActivity : AppCompatActivity() {
         viewBinding.btnSearch.setOnClickListener {
             // Display progress
             viewBinding.progressBar.visibility = View.VISIBLE
+            viewBinding.btnSearch.visibility = View.GONE
             (viewBinding.ivQueryImage.drawable as? BitmapDrawable)?.bitmap?.let {
                 searchByImage(it)
             }
+            viewBinding.btnSave.visibility = View.VISIBLE
+        }
+
+        viewBinding.btnSave.setOnClickListener {
+
         }
     }
+
+
 
     /**
      * Use Product Search API to search with the given query image

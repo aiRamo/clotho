@@ -21,6 +21,7 @@
         android:id="@+id/btnSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/button_search_product"
         app:layout_constraintEnd_toEndOf="@+id/iv_query_image"
@@ -51,14 +52,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:text="Comparison Results"
         android:textColor="@color/white_v2"
         android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRetry" />
 
     <View
         android:id="@+id/searchDivider"
@@ -101,10 +101,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="28dp"
         android:text="Retry"
-        app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+        app:layout_constraintEnd_toEndOf="@+id/tvSearchResults"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_query_image" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Save Results"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_query_image"
+        app:layout_constraintStart_toEndOf="@+id/btnRetry"
+        app:layout_constraintTop_toBottomOf="@id/iv_query_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
