@@ -45,8 +45,9 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         //Checks to see if pants button is clicked and will than show the take photo button
         Button b = (Button) findViewById(R.id.btn_takePhoto);
         Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
-        pantsbutton.setOnClickListener( new View.OnClickListener()  {
-            public void onClick(View v) {
+        pantsbutton.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 b.setVisibility(View.VISIBLE);
                 System.out.println("Color Selector Clicked");
             }
