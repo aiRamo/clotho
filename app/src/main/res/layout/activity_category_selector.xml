@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#111619"
-    tools:ignore="LabelFor">
+    tools:ignore="LabelFor"
+    android:id="@+id/categoryStuff"
+    >
+
 
     <TextView
         android:id="@+id/categoryTitle"

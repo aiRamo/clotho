@@ -1,6 +1,7 @@
 package com.visionapi.clotho;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.visionapi.clotho.databinding.ActivityMainBinding;
+import android.widget.RelativeLayout;
 
 
 public class CategorySelector extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -81,7 +83,8 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
+        root.setBackgroundColor(Color.parseColor("#000000"));
     }
 
     @Override
