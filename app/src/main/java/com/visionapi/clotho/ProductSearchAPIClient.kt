@@ -65,7 +65,10 @@ class ProductSearchAPIClient : AppCompatActivity() {
         with(viewBinding) {
             // display
 
-            btnRetakePhoto.setOnClickListener { dispatchTakePictureIntent() }
+            btnRetakePhoto.setOnClickListener {
+                dispatchTakePictureIntent()
+                btnRetakePhoto.setText(R.string.retakePhotoMsg)
+            }
             ivPreview.setOnObjectClickListener { objectImage ->
                 startProductImageSearch(objectImage)
             }

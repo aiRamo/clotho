@@ -39,6 +39,7 @@ import com.visionapi.clotho.api.ProductSearchAPIClient
 import com.visionapi.clotho.databinding.ActivityProductSearchBinding
 import com.visionapi.clotho.api.ProductSearchResult
 import kotlinx.android.synthetic.main.activity_product_search.*
+import java.lang.Math.ceil
 
 class ProductSearchActivity : AppCompatActivity() {
 
@@ -184,7 +185,7 @@ class ProductSearchAdapter :
         @SuppressLint("SetTextI18n")
         fun bind(product: ProductSearchResult) {
             with(itemView) {
-                findViewById<TextView>(R.id.tvProductScore).text = "Similarity score: ${product.score}"
+                findViewById<TextView>(R.id.tvProductScore).text = String.format("Similarity Score: %.2f", (product.score * 100)) + "%" //"Similarity score: ${ceil(product.score * 100)}%"
                 findViewById<TextView>(R.id.tvProductLabel).text = "${product.label}"
                 // Show the image using Glide
                 Glide.with(itemView).load(product.imageUri).into(findViewById(R.id.ivProduct))

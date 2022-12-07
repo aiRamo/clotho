@@ -19,10 +19,9 @@
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
         android:text="@string/button_search_product"
         app:layout_constraintEnd_toEndOf="@+id/iv_query_image"
         app:layout_constraintStart_toEndOf="@+id/btnRetry"
@@ -99,9 +98,8 @@
 
     <Button
         android:id="@+id/btnRetry"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Retry"
