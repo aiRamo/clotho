@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/MyProfile"
+        android:text="𝙋𝙧𝙤𝙛𝙞𝙡𝙚"
         android:textColor="@color/purple_500"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"

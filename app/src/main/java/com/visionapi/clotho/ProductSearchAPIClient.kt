@@ -65,7 +65,10 @@ class ProductSearchAPIClient : AppCompatActivity() {
         with(viewBinding) {
             // display
 
-            btnRetakePhoto.setOnClickListener { dispatchTakePictureIntent() }
+            btnRetakePhoto.setOnClickListener {
+                dispatchTakePictureIntent()
+                btnRetakePhoto.setText(R.string.retakePhotoMsg)
+            }
             ivPreview.setOnObjectClickListener { objectImage ->
                 startProductImageSearch(objectImage)
             }
@@ -146,6 +149,8 @@ class ProductSearchAPIClient : AppCompatActivity() {
                         "com.visionapi.clotho.fileprovider",
                         it
                     )
+
+                    GlobalVars.uri = cameraPhotoUri.toString()
                     // Setting output file to take a photo
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraPhotoUri)
                     // Open camera based Intent.
