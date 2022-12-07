@@ -66,7 +66,7 @@
 
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/settingsicon" />
+        android:background="@drawable/settingsicon" />
 
 
 

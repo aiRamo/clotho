@@ -51,6 +51,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
                 System.out.println("Color Selector Clicked");
             }
         });
+
         /// Color Drop down
         String[] colorList = {"1", "2", "3", "4", "5","6","7","8","9","10","11","12","13","14"};
         setContentView(R.layout.activity_category_selector);
