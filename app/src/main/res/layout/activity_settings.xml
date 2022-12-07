@@ -7,9 +7,7 @@
     android:background="@drawable/background_image"
     tools:context=".Settings">
 
-    <!--    //Sex-->
 
-    <!--    //Male Clothing Sizes-->
 
     <TextView
         android:id="@+id/textView2"
