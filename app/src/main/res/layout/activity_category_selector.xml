@@ -66,7 +66,7 @@
             android:layout_height="65dp"
             android:textAlignment="center"
             android:gravity="center"
-            android:spinnerMode="dialog"
+            android:spinnerMode="dropdown"
             android:background="@drawable/color_blob"
             android:layout_marginEnd="20dp"/>
 

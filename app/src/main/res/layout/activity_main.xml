@@ -47,7 +47,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageButton
@@ -102,27 +102,21 @@
 
         </LinearLayout>
     </ScrollView>
+
     <ImageButton
         android:id="@+id/setting"
         android:layout_width="57dp"
         android:layout_height="57dp"
-
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="11dp"
-        android:backgroundTint="@color/white"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:background="@drawable/settingsicon"
         android:contentDescription="@string/Settings"
-        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-
-        tools:srcCompat="@drawable/settings_icon" />
-
-        tools:srcCompat="@drawable/settingsicon" />
+        app:layout_constraintVertical_bias="0.923" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

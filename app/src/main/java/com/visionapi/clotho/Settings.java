@@ -10,14 +10,24 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity {
+
+    //Shoe Variables
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //shoe size drop down
-        Spinner spinnertextsize = findViewById(R.id.dropdown);
-        String[] shoeSizes = getResources().getStringArray(R.array.shoe_sizes);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, shoeSizes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnertextsize.setAdapter(adapter);
+
+
+
+        //New shoe drop down
+        final Spinner dropdowns = findViewById(R.id.dropdown);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.spinner_items,
+                R.layout.color_spinner_layout
+        );
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        dropdowns.setAdapter(adapter);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -31,4 +41,6 @@ public class Settings extends AppCompatActivity {
         });
 
     }
+
+
 }
