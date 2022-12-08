@@ -15,6 +15,12 @@ public class GlobalVars {
     public static String itemColor;
     public static String AmazonLink = null;
 
+    //Settings
+    public static String gender;
+    public static String topSize;
+    public static String waistSize;
+    public static String shoeSize;
+
     public static int savedCount = 0;
 
     public static ArrayList<DataSnapshot> savedData = new ArrayList<>();
