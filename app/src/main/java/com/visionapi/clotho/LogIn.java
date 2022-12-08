@@ -77,10 +77,10 @@ public class LogIn extends AppCompatActivity{
                                      //Get data in datasnapshot
                                      for (DataSnapshot dsp : snapshot.child(userName).child("Saved Searches").getChildren()) {
                                          if (GlobalVars.savedCount < 5) {
-                                             savedImages.add((dsp));
+                                             savedImages.add(dsp);
+                                             GlobalVars.savedData.add(dsp);
                                              GlobalVars.savedCount++;
                                          }
-
                                      }
 
                                      Toast.makeText(LogIn.this, "AMAZON: " + savedImages.get(1).child("amazonLink").getValue(), Toast.LENGTH_LONG).show();
