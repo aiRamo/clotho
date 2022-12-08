@@ -52,7 +52,7 @@ public class LogIn extends AppCompatActivity{
                     databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            // check if username and passoword exist in firebase database
+                            // check if username and password exist in firebase database
                             if(snapshot.hasChild(userName)){
                                 // if the username matches get the password and match it to
                                 // the firebase one
@@ -93,6 +93,7 @@ public class LogIn extends AppCompatActivity{
                 startActivity(new Intent(LogIn.this,Registration.class));
             }
         });
+
 
     }
 }
