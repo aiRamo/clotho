@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="𝙋𝙧𝙤𝙛𝙞𝙡𝙚"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/blue"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,10 +24,13 @@
 
     <Button
         android:id="@+id/btn_newEntry"
+        android:background="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="New Photo"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"

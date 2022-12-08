@@ -20,7 +20,7 @@
     <color name="Yellow">#FFFF00</color>
     <color name="Purple">#4B0082</color>
     <color name="Blue">#0000FF</color>
-
+    <color name="NeonBlue">#04d9ff</color>
     <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
     <color name="my_spinner_text_color">#FBFAF8</color>
 </resources>
