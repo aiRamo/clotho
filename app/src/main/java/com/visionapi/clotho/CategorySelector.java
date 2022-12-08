@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.visionapi.clotho.databinding.ActivityMainBinding;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 
 public class CategorySelector extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -26,18 +27,15 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
     ColorObject selectedColor;
     ActivityMainBinding binding;
 
-     Spinner pantsbutton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
+
         setContentView(R.layout.activity_category_selector);
 
         TakePhoto = findViewById(R.id.btn_takePhoto);
         Intent kotlinPreview = new Intent(CategorySelector.this, ProductSearchAPIClient.class);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         TakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +57,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
                 System.out.println("Color Selector Clicked");
             }
         });*/
-
+        final Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.colorList,
@@ -84,12 +82,49 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String colorText = pantsbutton.getSelectedItem().toString();
+        String colorText = adapterView.getSelectedItem().toString();
+        CheckedTextView spinnerStyle = findViewById(R.id.spinnerStyle);
         Toast.makeText(this, colorText, Toast.LENGTH_SHORT).show();
         ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
+        if (colorText.equals("Select Color")) {
+            spinnerStyle.setTextColor(Color.parseColor("#000000"));
+            adapterView.setBackgroundColor(Color.parseColor("#808080"));
+        }
         if (colorText.equals("Blue")) {
-            root.setBackgroundColor(Color.parseColor("@colors/Blue"));
-            Toast.makeText(this, "Blue Shit", Toast.LENGTH_SHORT).show();
+            adapterView.setBackgroundColor(Color.parseColor("#1663BE"));
+        }
+        if (colorText.equals("White")) {
+            spinnerStyle.setTextColor(Color.parseColor("#000000"));
+            adapterView.setBackgroundColor(Color.parseColor("#F2F3F4"));
+        }
+        if (colorText.equals("Black")) {
+            adapterView.setBackgroundColor(Color.parseColor("#000000"));
+        }
+        if (colorText.equals("Brown")) {
+            adapterView.setBackgroundColor(Color.parseColor("#964B00"));
+        }
+        if (colorText.equals("Grey")) {
+            adapterView.setBackgroundColor(Color.parseColor("#808080"));
+        }
+        if (colorText.equals("Red")) {
+            adapterView.setBackgroundColor(Color.parseColor("#FF0000"));
+        }
+        if (colorText.equals("Orange")) {
+            adapterView.setBackgroundColor(Color.parseColor("#FFA500"));
+        }
+        if (colorText.equals("Yellow")) {
+            spinnerStyle.setTextColor(Color.parseColor("#000000"));
+            adapterView.setBackgroundColor(Color.parseColor("#FFFF00"));
+        }
+        if (colorText.equals("Green")) {
+            spinnerStyle.setTextColor(Color.parseColor("#000000"));
+            adapterView.setBackgroundColor(Color.parseColor("#00FF00"));
+        }
+        if (colorText.equals("Purple")) {
+            adapterView.setBackgroundColor(Color.parseColor("#A020F0"));
+        }
+        if (colorText.equals("Pink")) {
+            adapterView.setBackgroundColor(Color.parseColor("#FFC0CB"));
         }
 
     }

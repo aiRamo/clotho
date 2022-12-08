@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
+    android:background="@color/white"
     tools:context=".Settings">
-
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="268dp"
         android:layout_height="78dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
         android:text="Select Gender"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="42sp"
         android:textStyle="bold"
-        android:shadowColor="@color/purple_500"
-        android:shadowRadius="3"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:textSize="40sp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,18 +32,17 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="301dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="258dp"
+        android:layout_height="79dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
         android:text="Select Size"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="45sp"
         android:textStyle="bold"
-        android:shadowColor="@color/purple_500"
-        android:shadowRadius="3"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,20 +54,19 @@
         android:id="@+id/imageButton"
         android:layout_width="63dp"
         android:layout_height="54dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
         android:adjustViewBounds="true"
+        android:background="@drawable/settingsicon"
         android:contentDescription="@string/Settings"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settingsicon" />
-
-
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
@@ -89,25 +87,25 @@
             android:outlineAmbientShadowColor="@color/purple_500"
             android:outlineSpotShadowColor="@color/purple_500"
             android:text="Male"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/NeonBlue"
             android:textColorHighlight="@color/black"
-            app:chipBackgroundColor="@color/white" />
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/unisexChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Unisex"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/femaleChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Female"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
     </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.chip.ChipGroup
@@ -127,40 +125,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Small"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/mediumChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Medium"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/largeChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Large"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/extraLargeChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="X-Large"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/extraExtraLargeChip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="XX-Large"
-            android:textColor="@color/purple_500"
-            app:chipBackgroundColor="@color/white" />
+            android:textColor="@color/NeonBlue"
+            app:chipBackgroundColor="@color/black" />
     </com.google.android.material.chip.ChipGroup>
 
     <Spinner
@@ -180,7 +178,7 @@
         android:layout_marginStart="138dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="139dp"
-        android:shadowColor="@color/purple_500"
+        android:shadowColor="@color/NeonBlue"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="3"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#111619"
+    android:background="#FEFEFA"
     tools:ignore="LabelFor"
     android:id="@+id/categoryStuff"
     >
@@ -14,60 +14,64 @@
         android:id="@+id/categoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="@string/category_title"
-        android:shadowColor="@color/purple_500"
-        android:shadowRadius="10"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999" />
+        app:layout_constraintVertical_bias="0.060000002" />
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
-            android:text="Color:"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:gravity="center"/>
-
-        <Spinner
-            android:id="@+id/colorSpinner"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/color_blob"
-            android:gravity="center"
-            android:spinnerMode="dropdown"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-
-    <Button
-        android:visibility="invisible"
-        android:id="@+id/btn_takePhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take New Photo"
+    <Spinner
+        android:id="@+id/colorSpinner"
+        android:layout_width="374dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-      />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_takePhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Take New Photo"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/colorSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/colorSpinner"
+        app:layout_constraintStart_toStartOf="@+id/colorSpinner" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/colorSpinner"
+        app:layout_constraintStart_toStartOf="@+id/colorSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/colorSpinner" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="409dp"
+        android:layout_height="4dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

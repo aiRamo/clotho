@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.chip.Chip;
+
 public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //Shoe Variables
@@ -38,7 +40,8 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
                 System.out.println("Settings Button Clicked");
             }
         });
-
+        Chip small = (Chip) findViewById(R.id.smallChip);
+        small.setChipBackgroundColorResource(R.color.black);
     }
 
     @Override
