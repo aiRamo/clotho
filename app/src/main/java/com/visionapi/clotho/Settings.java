@@ -75,7 +75,6 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(), "Shoe Size: "+ users[adapterView.getSelectedItemPosition()] ,Toast.LENGTH_SHORT).show();
 
     }
 
