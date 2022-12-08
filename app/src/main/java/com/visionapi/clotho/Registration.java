@@ -32,6 +32,8 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
         final EditText fullname = findViewById(R.id.editTextPersonName);
         final EditText username = findViewById(R.id.editTextUsername);
         final EditText CreatePassword = findViewById(R.id.editTextPassword);
+        final EditText ConfirmPassword = findViewById(R.id.editTextPassword2);
+        final EditText phonenumber = findViewById(R.id.editTextPhonenumber);
 
 
         final Spinner gender = findViewById(R.id.spinner4);
@@ -62,7 +64,9 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                 final String fullNameTxt = fullname.getText().toString();
                 final String userNameTxt = username.getText().toString();
                 final String passwordTxt = CreatePassword.getText().toString();
+                final String confirmTxt = ConfirmPassword.getText().toString();
                 final String genderTxt = gender.getSelectedItem().toString();
+                final String phoneTxt = phonenumber.getText().toString();
 
                 //JUST FOR TESTING SAVE FEATURE, DISREGARD LATER...
 //
@@ -74,8 +78,10 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
 
                 // check if the user fills all the fields before sending data to firebase
                 if(fullNameTxt.isEmpty() || passwordTxt.isEmpty()
-                        || genderTxt.equals("Gender:")){
+                        || genderTxt.equals("Gender:") || confirmTxt.isEmpty() || phoneTxt.isEmpty()){
                     Toast.makeText(Registration.this, "Please fill out all fields",Toast.LENGTH_SHORT).show();
+                } else if(!passwordTxt.equals(confirmTxt)) {
+                    Toast.makeText(Registration.this, "Password fields do not match", Toast.LENGTH_SHORT).show();
                 }
 
                 else{
@@ -90,7 +96,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                                 // send data to firebase Realtime Database
                                 // we are going to user the phone number as the unique identity of every user
                                 // so all the other details of users will be under the email
-                                databaseReference.child("users").child(userNameTxt).child("firstName").setValue(fullNameTxt);
+                                databaseReference.child("users").child(userNameTxt).child("fullName").setValue(fullNameTxt);
                                 databaseReference.child("users").child(userNameTxt).child("password").setValue(passwordTxt);
                                 databaseReference.child("users").child(userNameTxt).child("gender").setValue(genderTxt);
 
