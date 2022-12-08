@@ -3,7 +3,6 @@ package com.visionapi.clotho;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -11,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends AppCompatActivity{
 
@@ -45,15 +43,12 @@ public class LogIn extends AppCompatActivity{
                 }
                 else{
                     // will come back to later in tutorial
-                   // where we want to check if the Log in info matches in the database
-
-
                 }
-//                  need to check for if the password or user name is wrong
-//                if (userName.equals("admin") && passWord.equals("admin")){
-//                    GlobalLoginChecker.isLoggedIn=true;
-//                    startActivity(homepage);
-//                }
+
+                if (userName.equals("admin") && passWord.equals("admin")){
+                    GlobalVars.isLoggedIn=true;
+                    startActivity(homepage);
+                }
             }
         });
 

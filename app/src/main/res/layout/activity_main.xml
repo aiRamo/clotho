@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/MyProfile"
+        android:text="𝙋𝙧𝙤𝙛𝙞𝙡𝙚"
         android:textColor="@color/purple_500"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"
@@ -40,13 +40,14 @@
         android:layout_marginTop="70dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_newEntry"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageButton
@@ -106,23 +107,16 @@
         android:id="@+id/setting"
         android:layout_width="57dp"
         android:layout_height="57dp"
-
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="11dp"
-        android:backgroundTint="@color/white"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
-        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:background="@drawable/settingsicon"
         android:contentDescription="@string/Settings"
-        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-
-        tools:srcCompat="@drawable/settings_icon" />
-
-        tools:srcCompat="@drawable/settingsicon" />
+        app:layout_constraintVertical_bias="0.923" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

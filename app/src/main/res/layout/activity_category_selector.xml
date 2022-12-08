@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#111619"
-    tools:ignore="LabelFor">
+    tools:ignore="LabelFor"
+    android:id="@+id/categoryStuff"
+    >
+
 
     <TextView
         android:id="@+id/categoryTitle"
@@ -24,56 +27,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13999999" />
 
-    <ToggleButton
-        android:id="@+id/Pants"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textOff="Pants"
-        android:textOn="Pants"
-        android:textSize="24sp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355"
 
-        />
 
-    <ToggleButton
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FAF8F8"
-        android:textOff="Shirts"
-        android:textOn="Shirts"
-        android:textSize="24sp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        android:layout_marginTop="250dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
-    <ToggleButton
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FAF8F8"
-        android:textOff="Shoes"
-        android:textOn="Shoes"
-        android:textSize="24sp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="Color:"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <Spinner
+            android:id="@+id/colorSpinner"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/color_blob"
+            android:gravity="center"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+    </LinearLayout>
 
     <Button
+        android:visibility="invisible"
         android:id="@+id/btn_takePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,6 +68,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

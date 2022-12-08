@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
 
-        if (GlobalLoginChecker.isLoggedIn == false){
+        if (GlobalVars.isLoggedIn == false){
             startActivity(loginPage);
         }
 
 
-
+    //Settings Button
         ImageButton settingsButton = (ImageButton)findViewById(R.id.setting);
         settingsButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button categoryButton = findViewById(R.id.btn_newEntry);
-
+        //Category Selection
         categoryButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CategorySelector.class));

@@ -7,9 +7,7 @@
     android:background="@drawable/background_image"
     tools:context=".Settings">
 
-    <!--    //Sex-->
 
-    <!--    //Male Clothing Sizes-->
 
     <TextView
         android:id="@+id/textView2"
@@ -57,11 +55,19 @@
         android:id="@+id/imageButton"
         android:layout_width="63dp"
         android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:contentDescription="ProfileButton"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="52dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/Settings"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/settingsicon" />
+
 
 
     <com.google.android.material.chip.ChipGroup
@@ -157,7 +163,35 @@
             app:chipBackgroundColor="@color/white" />
     </com.google.android.material.chip.ChipGroup>
 
+    <Spinner
+        android:id="@+id/dropdown"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="139dp"
+        android:shadowColor="@color/purple_500"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="Shoe Size"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup2" />
     <!--    //Unisex Clothing sizes-->
 
 

@@ -8,20 +8,21 @@
     tools:context=".Registration"
     tools:ignore="LabelFor">
 
+
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/title_activity_registration"
+        android:textAlignment="center"
         android:textColor="@color/purple_500"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"
-        android:text="@string/title_activity_registration"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintVertical_bias="0.06999999" />
 
     <Button
         android:id="@+id/registerButton"
@@ -36,7 +37,6 @@
         app:layout_constraintVertical_bias="0.92"
         android:textColor="@android:color/white"/>
 
-
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
@@ -45,14 +45,16 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/prompt_firstname"
+        android:hint="First name"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.26" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -62,14 +64,33 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/prompt_lastname"
+        android:hint="@string/prompt_lastname"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumberText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <EditText
+        android:id="@+id/phoneNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Last name"
+        android:ems="10"
+        android:hint="@string/prompt_phoneNumber"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#FAF8F8"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.37" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -79,14 +100,14 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:text="@string/prompt_email"
+        android:hint="@string/prompt_email"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintVertical_bias="0.48000002" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -95,30 +116,29 @@
         android:autofillHints="Password"
         android:ems="10"
         android:minHeight="48dp"
-        android:text="@string/prompt_password"
+        android:hint="@string/prompt_password"
+        android:textColorHint="#FAF8F8"
         android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.59000003" />
 
-    <EditText
+
+    <Spinner
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
         android:autofillHints="Gender"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:entries="@array/spinner_items"
         android:minHeight="48dp"
-        android:text="@string/gender_selection"
-        android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
