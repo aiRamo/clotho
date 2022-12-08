@@ -33,6 +33,7 @@ public class LogIn extends AppCompatActivity{
         final EditText Password = (EditText) findViewById(R.id.Password);
         final MaterialButton login = (MaterialButton) findViewById(R.id.loginbtn);
         final MaterialButton signup = (MaterialButton) findViewById(R.id.signup);
+        final MaterialButton forgotpass = (MaterialButton) findViewById(R.id.forgotpass);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +92,18 @@ public class LogIn extends AppCompatActivity{
             public void onClick(View view) {
                 // opens Registration Activity
                 startActivity(new Intent(LogIn.this,Registration.class));
+            }
+        });
+
+        // when forgot password button is clicked
+        // will send user to forgot password class page
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // opens Registration Activity
+                startActivity(new Intent(LogIn.this,ForgotPassword.class));
+                // might need a break
+                // break;
             }
         });
 
