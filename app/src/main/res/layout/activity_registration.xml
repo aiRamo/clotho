@@ -84,7 +84,7 @@
         android:layout_marginTop="208dp"
         android:autofillHints="Last name"
         android:ems="10"
-        android:hint="@string/prompt_email"
+        android:hint="@string/prompt_phoneNumber"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="#FAF8F8"
