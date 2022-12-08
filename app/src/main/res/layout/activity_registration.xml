@@ -69,7 +69,7 @@
         android:textColor="#FAF8F8"
         android:textColorHint="#FAF8F8"
 
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.457"

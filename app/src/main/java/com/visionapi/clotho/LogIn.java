@@ -45,10 +45,10 @@ public class LogIn extends AppCompatActivity{
                     // will come back to later in tutorial
                 }
 
-                if (userName.equals("admin") && passWord.equals("admin")){
-                    GlobalVars.isLoggedIn=true;
-                    startActivity(homepage);
-                }
+//                if (userName.equals("admin") && passWord.equals("admin")){
+//                    GlobalVars.isLoggedIn=true;
+//                    startActivity(homepage);
+//                }
             }
         });
 
@@ -61,6 +61,12 @@ public class LogIn extends AppCompatActivity{
             }
         });
 
-
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // opens Registration Activity
+                startActivity(new Intent(LogIn.this,MainActivity.class));
+            }
+        });
     }
 }
