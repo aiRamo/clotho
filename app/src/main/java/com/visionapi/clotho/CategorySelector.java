@@ -9,12 +9,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.visionapi.clotho.databinding.ActivityMainBinding;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 
 public class CategorySelector extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -26,18 +26,15 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
     ColorObject selectedColor;
     ActivityMainBinding binding;
 
-     Spinner pantsbutton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
+
         setContentView(R.layout.activity_category_selector);
 
         TakePhoto = findViewById(R.id.btn_takePhoto);
         Intent kotlinPreview = new Intent(CategorySelector.this, ProductSearchAPIClient.class);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         TakePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +56,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
                 System.out.println("Color Selector Clicked");
             }
         });*/
-
+        final Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.colorList,
@@ -84,11 +81,11 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String colorText = pantsbutton.getSelectedItem().toString();
+        String colorText = adapterView.getSelectedItem().toString();
         Toast.makeText(this, colorText, Toast.LENGTH_SHORT).show();
         ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
         if (colorText.equals("Blue")) {
-            root.setBackgroundColor(Color.parseColor("@colors/Blue"));
+            root.setBackgroundColor(Color.parseColor("#6987C9"));
             Toast.makeText(this, "Blue Shit", Toast.LENGTH_SHORT).show();
         }
 
