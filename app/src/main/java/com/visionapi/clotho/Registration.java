@@ -61,7 +61,6 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
 
 
                 final String fullNameTxt = fullname.getText().toString();
-                final String lastNameTxt = lastname.getText().toString();
                 final String userNameTxt = username.getText().toString();
                 final String passwordTxt = CreatePassword.getText().toString();
                 final String genderTxt = gender.getSelectedItem().toString();
