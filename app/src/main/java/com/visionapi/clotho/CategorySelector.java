@@ -88,7 +88,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
         if (colorText.equals("Select Color")) {
             spinnerStyle.setTextColor(Color.parseColor("#000000"));
-            adapterView.setBackgroundColor(Color.parseColor("#F2F3F4"));
+            adapterView.setBackgroundColor(Color.parseColor("#808080"));
         }
         if (colorText.equals("Blue")) {
             adapterView.setBackgroundColor(Color.parseColor("#1663BE"));
