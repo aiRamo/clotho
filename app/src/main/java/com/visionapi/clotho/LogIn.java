@@ -49,7 +49,7 @@ public class LogIn extends AppCompatActivity{
                 }
                 else{
                     // will come back to later in tutorial
-                    databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             // check if username and passoword exist in firebase database
@@ -57,12 +57,13 @@ public class LogIn extends AppCompatActivity{
                                 // if the username matches get the password and match it to
                                 // the firebase one
 
-                                 final String getPassword = snapshot.child(passWord).child("password").getValue(String.class);
+                                 final String getPassword = snapshot.child(userName).child("password").getValue(String.class);
 
                                  if(getPassword.equals(passWord)){
                                      Toast.makeText(LogIn.this, "Successful Log In", Toast.LENGTH_SHORT).show();
 
                                      // open user account straight to the splash page
+                                     GlobalVars.isLoggedIn = true;
                                      startActivity(new Intent(LogIn.this,MainActivity.class));
                                      finish();
                                  }
@@ -71,7 +72,7 @@ public class LogIn extends AppCompatActivity{
                                  }
                             }
                             else{
-                                Toast.makeText(LogIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LogIn.this, "No User:" + userName, Toast.LENGTH_SHORT).show();
                             }
                         }
 
