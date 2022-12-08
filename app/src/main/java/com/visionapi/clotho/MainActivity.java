@@ -1,5 +1,7 @@
 package com.visionapi.clotho;
 
+
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    ArrayList<DataSnapshot> savedData = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton button4 = (ImageButton) findViewById(R.id.outfit4);
         final ImageButton button5 = (ImageButton) findViewById(R.id.outfit5);
 
-        ArrayList<DataSnapshot> savedData = new ArrayList<>();
+
         ArrayList<ImageButton> imageButtonList = new ArrayList<>();
 
         imageButtonList.add(button1);
@@ -84,7 +86,55 @@ public class MainActivity extends AppCompatActivity {
         imageButtonList.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (GlobalVars.savedCount >= 1) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse((String) savedData.get(0).child("amazonLink").getValue()));
+                    startActivity(i);
+                }
+            }
+        });
 
+        imageButtonList.get(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (GlobalVars.savedCount >= 2) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse((String) savedData.get(1).child("amazonLink").getValue()));
+                    startActivity(i);
+                }
+            }
+        });
+
+        imageButtonList.get(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (GlobalVars.savedCount >= 3) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse((String) savedData.get(2).child("amazonLink").getValue()));
+                    startActivity(i);
+                }
+            }
+        });
+
+        imageButtonList.get(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (GlobalVars.savedCount >= 4) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse((String) savedData.get(3).child("amazonLink").getValue()));
+                    startActivity(i);
+                }
+            }
+        });
+
+        imageButtonList.get(4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (GlobalVars.savedCount == 5) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse((String) savedData.get(4).child("amazonLink").getValue()));
+                    startActivity(i);
+                }
             }
         });
 
