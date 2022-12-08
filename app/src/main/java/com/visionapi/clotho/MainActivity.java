@@ -19,14 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Button newEntryButton = findViewById(R.id.btn_newEntry);
-
-
         Intent loginPage = new Intent(MainActivity.this, LogIn.class);
 
 
-        if (GlobalVars.isLoggedIn == false){
+        if (!GlobalVars.isLoggedIn){
             startActivity(loginPage);
         }
 
