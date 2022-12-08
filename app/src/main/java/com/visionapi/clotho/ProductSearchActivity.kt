@@ -125,7 +125,7 @@ class ProductSearchActivity : AppCompatActivity() {
             val databaseReference = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/")
 
-            databaseReference.child("users").child(GlobalVars.phoneTxt_Global)
+            databaseReference.child("users").child(GlobalVars.userNameTxt_Global)
                 .child("Saved Searches").child(getTimeEpoch()).setValue(savedData)
                 .addOnCompleteListener {
                     Toast.makeText(this, "data insert success", Toast.LENGTH_SHORT).show()

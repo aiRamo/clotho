@@ -17,11 +17,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class LogIn extends AppCompatActivity{
 
     Intent registration, homepage;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/");
 
+    ArrayList<DataSnapshot> savedImages = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +53,7 @@ public class LogIn extends AppCompatActivity{
                 }
                 else{
                     // will come back to later in tutorial
-                    databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             // check if username and password exist in firebase database
@@ -58,12 +61,30 @@ public class LogIn extends AppCompatActivity{
                                 // if the username matches get the password and match it to
                                 // the firebase one
 
-                                 final String getPassword = snapshot.child(passWord).child("password").getValue(String.class);
+                                 final String getPassword = snapshot.child(userName).child("password").getValue(String.class);
 
                                  if(getPassword.equals(passWord)){
                                      Toast.makeText(LogIn.this, "Successful Log In", Toast.LENGTH_SHORT).show();
 
                                      // open user account straight to the splash page
+                                     GlobalVars.isLoggedIn = true;
+
+                                     GlobalVars.userNameTxt_Global = userName;
+                                     GlobalVars.genderTxt_Global = snapshot.child(userName).child("gender").getValue(String.class);
+                                     GlobalVars.emailTxt_Global = snapshot.child(userName).child("email").getValue(String.class);
+    
+
+                                     //Get data in datasnapshot
+                                     for (DataSnapshot dsp : snapshot.child(userName).child("Saved Searches").getChildren()) {
+                                         if (GlobalVars.savedCount < 5) {
+                                             savedImages.add((dsp));
+                                             GlobalVars.savedCount++;
+                                         }
+
+                                     }
+
+                                     Toast.makeText(LogIn.this, "AMAZON: " + savedImages.get(1).child("amazonLink").getValue(), Toast.LENGTH_LONG).show();
+                                     Toast.makeText(LogIn.this, "URI: " + savedImages.get(0).child("imageuri").getValue(), Toast.LENGTH_LONG).show();
                                      startActivity(new Intent(LogIn.this,MainActivity.class));
                                      finish();
                                  }
@@ -72,7 +93,7 @@ public class LogIn extends AppCompatActivity{
                                  }
                             }
                             else{
-                                Toast.makeText(LogIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LogIn.this, "No User:" + userName, Toast.LENGTH_SHORT).show();
                             }
                         }
 
