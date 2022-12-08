@@ -77,23 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Title"
         app:layout_constraintVertical_bias="0.55" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
-        android:autofillHints="Last name"
-        android:ems="10"
-        android:hint="@string/prompt_phoneNumber"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="#FAF8F8"
 
-        android:textColorHint="#FAF8F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
