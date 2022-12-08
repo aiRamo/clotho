@@ -31,12 +31,11 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
         // setting up all the variables for contents of registration page
         final EditText fullname = findViewById(R.id.editTextTextPersonName);
         final EditText lastname = findViewById(R.id.editTextTextPersonName2);
-        final EditText email = findViewById(R.id.editTextTextEmailAddress);
-        final EditText phoneNumber = findViewById(R.id.phoneNumberText);
+        final EditText username = findViewById(R.id.editTextTextUsername);
         final EditText CreatePassword = findViewById(R.id.editTextTextPassword);
 
 
-        final Spinner gender = findViewById(R.id.editTextTextPersonName3);
+        final Spinner gender = findViewById(R.id.spinner4);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.spinner_items,
@@ -63,23 +62,21 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
 
                 final String fullNameTxt = fullname.getText().toString();
                 final String lastNameTxt = lastname.getText().toString();
-                final String phoneTxt = phoneNumber.getText().toString();
-                final String emailTxt = email.getText().toString();
+                final String userNameTxt = username.getText().toString();
                 final String passwordTxt = CreatePassword.getText().toString();
                 final String genderTxt = gender.getSelectedItem().toString();
 
                 //JUST FOR TESTING SAVE FEATURE, DISREGARD LATER...
-
-                GlobalVars.fullNameTxt_Global = fullNameTxt;
-                GlobalVars.lastNameTxt_Global = lastNameTxt;
-                GlobalVars.phoneTxt_Global = phoneTxt;
-                GlobalVars.emailTxt_Global = emailTxt;
-                GlobalVars.passwordTxt_Global = passwordTxt;
-                GlobalVars.genderTxt_Global = genderTxt;
+//
+//                GlobalVars.fullNameTxt_Global = fullNameTxt;
+//                GlobalVars.lastNameTxt_Global = lastNameTxt;
+//                GlobalVars.userNameTxt_Global = userNameTxt;
+//                GlobalVars.passwordTxt_Global = passwordTxt;
+//                GlobalVars.genderTxt_Global = genderTxt;
 
                 // check if the user fills all the fields before sending data to firebase
-                if(fullNameTxt.isEmpty() || lastNameTxt.isEmpty() || emailTxt.isEmpty() || passwordTxt.isEmpty()
-                        || genderTxt.equals("Gender:") || phoneTxt.isEmpty()){
+                if(fullNameTxt.isEmpty() || passwordTxt.isEmpty()
+                        || genderTxt.equals("Gender:")){
                     Toast.makeText(Registration.this, "Please fill out all fields",Toast.LENGTH_SHORT).show();
                 }
 
@@ -88,18 +85,16 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             // check if email is not registered before
-                            if(snapshot.hasChild(phoneTxt)){
+                            if(snapshot.hasChild(userNameTxt)){
                                 Toast.makeText(Registration.this, "Phone Number is already in use", Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 // send data to firebase Realtime Database
                                 // we are going to user the phone number as the unique identity of every user
                                 // so all the other details of users will be under the email
-                                databaseReference.child("users").child(phoneTxt).child("firstName").setValue(fullNameTxt);
-                                databaseReference.child("users").child(phoneTxt).child("lastName").setValue(lastNameTxt);
-                                databaseReference.child("users").child(phoneTxt).child("password").setValue(passwordTxt);
-                                databaseReference.child("users").child(phoneTxt).child("gender").setValue(genderTxt);
-                                databaseReference.child("users").child(phoneTxt).child("email").setValue(emailTxt);
+                                databaseReference.child("users").child(userNameTxt).child("firstName").setValue(fullNameTxt);
+                                databaseReference.child("users").child(userNameTxt).child("password").setValue(passwordTxt);
+                                databaseReference.child("users").child(userNameTxt).child("gender").setValue(genderTxt);
 
                                 // show a registration was successful message to the user and finish the activity
                                 Toast.makeText(Registration.this,"User has been registered successfully",Toast.LENGTH_SHORT).show();
