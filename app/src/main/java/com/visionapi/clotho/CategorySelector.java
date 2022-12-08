@@ -2,6 +2,7 @@ package com.visionapi.clotho;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -71,11 +72,13 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         CheckedTextView spinnerStyle = findViewById(R.id.spinnerStyle);
         Toast.makeText(this, colorText, Toast.LENGTH_SHORT).show();
         ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
+        spinnerStyle.setTypeface(Typeface.DEFAULT_BOLD);
         if (colorText.equals("Select Color")) {
             spinnerStyle.setTextColor(Color.parseColor("#000000"));
             adapterView.setBackgroundColor(Color.parseColor("#F2F3F4"));
         }
         if (colorText.equals("Blue")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#1663BE"));
         }
         if (colorText.equals("White")) {
@@ -83,18 +86,23 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
             adapterView.setBackgroundColor(Color.parseColor("#F2F3F4"));
         }
         if (colorText.equals("Black")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#000000"));
         }
         if (colorText.equals("Brown")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#964B00"));
         }
         if (colorText.equals("Grey")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#808080"));
         }
         if (colorText.equals("Red")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#FF0000"));
         }
         if (colorText.equals("Orange")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#FFA500"));
         }
         if (colorText.equals("Yellow")) {
@@ -106,9 +114,11 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
             adapterView.setBackgroundColor(Color.parseColor("#00FF00"));
         }
         if (colorText.equals("Purple")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#A020F0"));
         }
         if (colorText.equals("Pink")) {
+            spinnerStyle.setTextColor(Color.parseColor("#F2F3F4"));
             adapterView.setBackgroundColor(Color.parseColor("#FFC0CB"));
         }
 

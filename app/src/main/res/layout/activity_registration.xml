@@ -21,7 +21,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextPersonName"
@@ -38,7 +38,7 @@
         android:inputType="textPersonName"
 
         android:minHeight="48dp"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
         app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +84,7 @@
         android:hint="Full Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
 
         android:textColorHint="@color/blue"
 
@@ -103,11 +103,11 @@
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textColorHint="@color/blue"
-        app:layout_constraintEnd_toEndOf="@+id/spinner4"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner4"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
@@ -120,11 +120,11 @@
         android:hint="@string/confirmation"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textColorHint="@color/blue"
-        app:layout_constraintEnd_toEndOf="@+id/spinner4"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner4"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <EditText
@@ -137,17 +137,18 @@
         android:hint="@string/prompt_phoneNumber"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
         android:textColorHint="@color/blue"
-        app:layout_constraintEnd_toEndOf="@+id/spinner4"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner4"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword2"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword2" />
 
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginStart="-8dp"
         android:layout_marginTop="16dp"
         android:autofillHints="Gender"
         android:contentDescription="@string/gender_selection"

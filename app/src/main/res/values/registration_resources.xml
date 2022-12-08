@@ -1,5 +1,5 @@
 <resources>
-    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_registration">𝙍𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙩𝙞𝙤𝙣</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="confirmation">Confirm Password</string>

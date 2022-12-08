@@ -34,6 +34,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
         final EditText CreatePassword = findViewById(R.id.editTextPassword);
         final EditText ConfirmPassword = findViewById(R.id.editTextPassword2);
         final EditText phonenumber = findViewById(R.id.editTextPhonenumber);
+        final EditText email = findViewById(R.id.editTextEmail);
 
 
         final Spinner gender = findViewById(R.id.spinner4);
@@ -67,6 +68,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                 final String confirmTxt = ConfirmPassword.getText().toString();
                 final String genderTxt = gender.getSelectedItem().toString();
                 final String phoneTxt = phonenumber.getText().toString();
+                final String emailTxt = email.getText().toString();
 
                 //JUST FOR TESTING SAVE FEATURE, DISREGARD LATER...
 //
@@ -99,6 +101,8 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                                 databaseReference.child("users").child(userNameTxt).child("fullName").setValue(fullNameTxt);
                                 databaseReference.child("users").child(userNameTxt).child("password").setValue(passwordTxt);
                                 databaseReference.child("users").child(userNameTxt).child("gender").setValue(genderTxt);
+                                databaseReference.child("users").child(userNameTxt).child("phoneNumber").setValue(phoneTxt);
+                                databaseReference.child("users").child(userNameTxt).child("email").setValue(emailTxt);
 
                                 // show a registration was successful message to the user and finish the activity
                                 Toast.makeText(Registration.this,"User has been registered successfully",Toast.LENGTH_SHORT).show();
