@@ -71,7 +71,7 @@
         android:backgroundTint="@color/blue"
         android:text="𝙻𝙾𝙶 𝙸𝙽" />
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -9,187 +9,155 @@
 
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="268dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:shadowColor="@color/NeonBlue"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3"
-        android:text="Select Gender"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="42sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/genderSelect"
         android:layout_width="258dp"
         android:layout_height="79dp"
         android:shadowColor="@color/NeonBlue"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="3"
-        android:text="Select Size"
+        android:text="Gender"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
+        app:layout_constraintBottom_toTopOf="@+id/genderSpin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Spinner
+        android:id="@+id/genderSpin"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/topSize"
+        android:layout_width="258dp"
+        android:layout_height="79dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="Top Size"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/topSpin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/topSpin"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bottomSize"
+        android:layout_width="258dp"
+        android:layout_height="79dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="Waist Size"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSpin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/bottomSpin"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="63dp"
         android:layout_height="54dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="12dp"
         android:adjustViewBounds="true"
         android:background="@drawable/settingsicon"
         android:contentDescription="@string/Settings"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
+        app:layout_constraintBottom_toTopOf="@+id/genderSelect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        android:layout_width="260dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="3dp"
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/topSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSpin" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/maleChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:outlineAmbientShadowColor="@color/purple_500"
-            android:outlineSpotShadowColor="@color/purple_500"
-            android:text="Male"
-            android:textColor="@color/NeonBlue"
-            android:textColorHighlight="@color/black"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/unisexChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Unisex"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/femaleChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-    </com.google.android.material.chip.ChipGroup>
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup2"
-        android:layout_width="205dp"
-        android:layout_height="244dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="109dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/smallChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Small"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/mediumChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Medium"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/largeChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Large"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/extraLargeChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="X-Large"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/extraExtraLargeChip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="XX-Large"
-            android:textColor="@color/NeonBlue"
-            app:chipBackgroundColor="@color/black" />
-    </com.google.android.material.chip.ChipGroup>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/dropdown"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="37dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="139dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="1dp"
         android:shadowColor="@color/NeonBlue"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="3"
         android:text="Shoe Size"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="45dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
     <!--    //Unisex Clothing sizes-->
 
 
