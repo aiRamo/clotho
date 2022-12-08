@@ -57,6 +57,7 @@
         <activity android:name=".CategorySelector"/>
         <activity android:name=".Registration"/>
         <activity android:name=".LogIn"/>
+        <activity android:name=".ForgotPassword"/>
 
 
     </application>
