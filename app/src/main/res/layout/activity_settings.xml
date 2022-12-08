@@ -8,22 +8,22 @@
     tools:context=".Settings">
 
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="268dp"
         android:layout_height="78dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
         android:text="Select Gender"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="42sp"
         android:textStyle="bold"
-        android:shadowColor="@color/NeonBlue"
-        android:shadowRadius="3"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:textSize="40sp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,25 +32,23 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="301dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="258dp"
+        android:layout_height="79dp"
+        android:shadowColor="@color/NeonBlue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
         android:text="Select Size"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="45sp"
         android:textStyle="bold"
-        android:shadowColor="@color/NeonBlue"
-        android:shadowRadius="3"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup"
         app:layout_constraintVertical_bias="0.38" />
-
 
     <ImageButton
         android:id="@+id/imageButton"
