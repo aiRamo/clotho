@@ -223,8 +223,16 @@ class ProductSearchAdapter :
                 findViewById<TextView>(R.id.tvProductScore).text = String.format("Similarity Score: %.2f", (product.score * 100)) + "%" //"Similarity score: ${ceil(product.score * 100)}%"
                 if (GlobalVars.AmazonLink == null){
                     var delimiter = "category - "
+
+                    var size: String = String()
+                    if (product.label.split(delimiter)[1] == "shoe"){
+                        size = GlobalVars.shoeSize
+                    } else if (product.label.split(delimiter)[1] == "dress") {
+                        size = GlobalVars.topSize
+                    }
+
                     GlobalVars.AmazonLink =
-                        "http://www.amazon.com/gp/mas/dl/android?s=" + GlobalVars.itemColor + "%20" + GlobalVars.genderTxt_Global + "%20" + product.label.split(delimiter)[1] + "%20" + "Size ="
+                        "http://www.amazon.com/gp/mas/dl/android?s=" + GlobalVars.itemColor + "%20" + GlobalVars.genderTxt_Global + "%20" + product.label.split(delimiter)[1] + "%20" + "Size =" + size
                 }
 
                 //findViewById<TextView>(R.id.tvProductLabel).text = "${product.label}"

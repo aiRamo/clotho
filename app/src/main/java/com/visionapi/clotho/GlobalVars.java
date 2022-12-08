@@ -16,10 +16,9 @@ public class GlobalVars {
     public static String AmazonLink = null;
 
     //Settings
-    public static String gender;
-    public static String topSize;
-    public static String waistSize;
-    public static String shoeSize;
+    public static String topSize = "null";
+    public static String waistSize = "null";
+    public static String shoeSize = "null";
 
     public static int savedCount = 0;
 

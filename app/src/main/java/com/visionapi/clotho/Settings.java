@@ -3,16 +3,12 @@ package com.visionapi.clotho;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.chip.Chip;
 
 public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -34,16 +30,11 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
-        GlobalVars.shoeSize = spin.getSelectedItem().toString();
+
 
         //Settings Button
         ImageButton settingsButton = (ImageButton) findViewById(R.id.imageButton);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(Settings.this, MainActivity.class));
-                System.out.println("Settings Button Clicked");
-            }
-        });
+
         //---------------
         //Top Drop Down
         Spinner topSpin = (Spinner) findViewById(R.id.topSpin);
@@ -51,7 +42,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         topAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         topSpin.setAdapter(topAdapter);
         topSpin.setOnItemSelectedListener(this);
-        GlobalVars.topSize = topSpin.getSelectedItem().toString();
+
         //-------------
         //Bottom Drop Down
         Spinner botSpin = (Spinner) findViewById(R.id.bottomSpin);
@@ -59,7 +50,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         botAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         botSpin.setAdapter(botAdapter);
         botSpin.setOnItemSelectedListener(this);
-        GlobalVars.waistSize = botSpin.getSelectedItem().toString();
+
         ////------------
         //Gender Drop Down
         Spinner genderSpin = (Spinner) findViewById(R.id.genderSpin);
@@ -67,9 +58,21 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderSpin.setAdapter(genderAdapter);
         genderSpin.setOnItemSelectedListener(this);
-        GlobalVars.gender = genderSpin.getSelectedItem().toString();
+
         //--------
 
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                GlobalVars.shoeSize = spin.getSelectedItem().toString();
+                GlobalVars.topSize = topSpin.getSelectedItem().toString();
+                GlobalVars.waistSize = botSpin.getSelectedItem().toString();
+                GlobalVars.genderTxt_Global = genderSpin.getSelectedItem().toString();
+
+                startActivity(new Intent(Settings.this, MainActivity.class));
+                System.out.println("Settings Button Clicked");
+            }
+        });
     }
 
 
