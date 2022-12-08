@@ -17,10 +17,10 @@ import com.google.android.material.chip.Chip;
 public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //Shoe Variables
-    String[] users = {"1", "2", "3", "4", "5","6","7","8","9","10","11","12","13","14"};
-    String[] bottomlist = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","32","34","36","38","40"};
-    String[] topList = {"Small","Medium","Large","X-Large","XX-Large","XXX-Large"};
-    String[] genderList = {"Woman","Man","Unisex"};
+    String[] users = {"Select","1", "2", "3", "4", "5","6","7","8","9","10","11","12","13","14"};
+    String[] bottomlist = {"Select","0","2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","32","34","36","38","40"};
+    String[] topList = {"Select","Small","Medium","Large","X-Large","XX-Large","XXX-Large"};
+    String[] genderList = {"Select","Woman","Man","Unisex"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -47,22 +47,22 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         Spinner topSpin = (Spinner) findViewById(R.id.topSpin);
         ArrayAdapter<String> topAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, topList);
         topAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(topAdapter);
-        spin.setOnItemSelectedListener(this);
+        topSpin.setAdapter(topAdapter);
+        topSpin.setOnItemSelectedListener(this);
         //-------------
         //Bottom Drop Down
         Spinner botSpin = (Spinner) findViewById(R.id.bottomSpin);
         ArrayAdapter<String> botAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bottomlist);
         botAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(botAdapter);
-        spin.setOnItemSelectedListener(this);
+        botSpin.setAdapter(botAdapter);
+        botSpin.setOnItemSelectedListener(this);
         ////------------
         //Gender Drop Down
         Spinner genderSpin = (Spinner) findViewById(R.id.genderSpin);
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderList);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(genderAdapter);
-        spin.setOnItemSelectedListener(this);
+        genderSpin.setAdapter(genderAdapter);
+        genderSpin.setOnItemSelectedListener(this);
         //--------
 
     }
