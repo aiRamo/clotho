@@ -17,11 +17,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class LogIn extends AppCompatActivity{
 
     Intent registration, homepage;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/");
 
+    ArrayList<DataSnapshot> savedImages = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +67,23 @@ public class LogIn extends AppCompatActivity{
 
                                      // open user account straight to the splash page
                                      GlobalVars.isLoggedIn = true;
+
+                                     GlobalVars.userNameTxt_Global = userName;
+                                     GlobalVars.genderTxt_Global = snapshot.child(userName).child("gender").getValue(String.class);
+                                     GlobalVars.emailTxt_Global = snapshot.child(userName).child("email").getValue(String.class);
+    
+
+                                     //Get data in datasnapshot
+                                     for (DataSnapshot dsp : snapshot.child(userName).child("Saved Searches").getChildren()) {
+                                         if (GlobalVars.savedCount < 5) {
+                                             savedImages.add((dsp));
+                                             GlobalVars.savedCount++;
+                                         }
+
+                                     }
+
+                                     Toast.makeText(LogIn.this, "AMAZON: " + savedImages.get(1).child("amazonLink").getValue(), Toast.LENGTH_LONG).show();
+                                     Toast.makeText(LogIn.this, "URI: " + savedImages.get(0).child("imageuri").getValue(), Toast.LENGTH_LONG).show();
                                      startActivity(new Intent(LogIn.this,MainActivity.class));
                                      finish();
                                  }
