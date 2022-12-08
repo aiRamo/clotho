@@ -2,7 +2,6 @@ package com.visionapi.clotho;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,17 +14,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.visionapi.clotho.databinding.ActivityMainBinding;
-
 
 public class CategorySelector extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static final int PERMISSION_CODE = 1000;
     Button TakePhoto;
-    Uri image_uri;
-
-    ColorObject selectedColor;
-    ActivityMainBinding binding;
 
 
     @Override
@@ -41,14 +34,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         //Checks to see if pants button is clicked and will than show the take photo button
         Button b = (Button) findViewById(R.id.btn_takePhoto);
         b.setVisibility(View.VISIBLE);
-        /*Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
-        pantsbutton.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                b.setVisibility(View.VISIBLE);
-                System.out.println("Color Selector Clicked");
-            }
-        });*/
+
         final Spinner pantsbutton = (Spinner) findViewById(R.id.colorSpinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,

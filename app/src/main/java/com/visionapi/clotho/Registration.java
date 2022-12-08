@@ -29,10 +29,9 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
 
 
         // setting up all the variables for contents of registration page
-        final EditText fullname = findViewById(R.id.editTextTextPersonName);
-        final EditText lastname = findViewById(R.id.editTextTextPersonName2);
-        final EditText username = findViewById(R.id.editTextTextUsername);
-        final EditText CreatePassword = findViewById(R.id.editTextTextPassword);
+        final EditText fullname = findViewById(R.id.editTextPersonName);
+        final EditText username = findViewById(R.id.editTextUsername);
+        final EditText CreatePassword = findViewById(R.id.editTextPassword);
 
 
         final Spinner gender = findViewById(R.id.spinner4);
