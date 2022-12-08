@@ -1,6 +1,6 @@
 README.md for Clotho Application
 
- Install Android Studio for application creating
+ Install Android Studio for application creation
  
  Languages used: Java and Kotlin
  
