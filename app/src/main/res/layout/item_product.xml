@@ -6,6 +6,23 @@
     android:layout_height="120dp"
     android:padding="8dp">
 
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/ivProduct"
         android:layout_width="100dp"
@@ -30,15 +47,10 @@
             android:id="@+id/tvProductScore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="25sp"
             tools:text="Product Name" />
-
-        <TextView
-            android:id="@+id/tvProductLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            tools:text="Product Score" />
 
     </LinearLayout>
 

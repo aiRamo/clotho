@@ -1,7 +1,5 @@
 package com.visionapi.clotho;
 
-import android.net.Uri;
-
 public class GlobalVars {
 
     public static boolean isLoggedIn = false;
@@ -12,5 +10,7 @@ public class GlobalVars {
     public static String passwordTxt_Global;
     public static String genderTxt_Global;
     public static String uri;
+    public static String itemColor;
+    public static String AmazonLink = null;
 
 }
