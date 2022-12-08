@@ -6,15 +6,21 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends AppCompatActivity{
 
     Intent registration, homepage;
-
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,12 +49,40 @@ public class LogIn extends AppCompatActivity{
                 }
                 else{
                     // will come back to later in tutorial
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            // check if username and passoword exist in firebase database
+                            if(snapshot.hasChild(userName)){
+                                // if the username matches get the password and match it to
+                                // the firebase one
+
+                                 final String getPassword = snapshot.child(userName).child("password").getValue(String.class);
+
+                                 if(getPassword.equals(passWord)){
+                                     Toast.makeText(LogIn.this, "Successful Log In", Toast.LENGTH_SHORT).show();
+
+                                     // open user account straight to the splash page
+                                     GlobalVars.isLoggedIn = true;
+                                     startActivity(new Intent(LogIn.this,MainActivity.class));
+                                     finish();
+                                 }
+                                 else{
+                                     Toast.makeText(LogIn.this, "Wrong Password entered", Toast.LENGTH_SHORT).show();
+                                 }
+                            }
+                            else{
+                                Toast.makeText(LogIn.this, "No User:" + userName, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
 
-                if (userName.equals("admin") && passWord.equals("admin")){
-                    GlobalVars.isLoggedIn=true;
-                    startActivity(homepage);
-                }
             }
         });
 
@@ -60,7 +94,6 @@ public class LogIn extends AppCompatActivity{
                 startActivity(new Intent(LogIn.this,Registration.class));
             }
         });
-
 
     }
 }
