@@ -85,7 +85,7 @@ public class CategorySelector extends AppCompatActivity implements AdapterView.O
         Toast.makeText(this, colorText, Toast.LENGTH_SHORT).show();
         ConstraintLayout root=(ConstraintLayout) findViewById(R.id.categoryStuff);
         if (colorText.equals("Blue")) {
-            root.setBackgroundColor(Color.parseColor("#6987C9"));
+            adapterView.setBackgroundColor(Color.parseColor("#6987C9"));
             Toast.makeText(this, "Blue Shit", Toast.LENGTH_SHORT).show();
         }
 
