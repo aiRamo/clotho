@@ -23,6 +23,7 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -62,7 +63,6 @@ class ProductSearchActivity : AppCompatActivity() {
 
     private lateinit var viewBinding: ActivityProductSearchBinding
     private lateinit var apiClient: ProductSearchAPIClient
-    private lateinit var amazonLink: String
 
 
 
@@ -71,7 +71,7 @@ class ProductSearchActivity : AppCompatActivity() {
         viewBinding = ActivityProductSearchBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
         initViews()
-        amazonLink = "http://www.amazon.com/gp/mas/dl/android?s=brown%20boot%20womens"
+        //amazonLink = "http://www.amazon.com/gp/mas/dl/android?s=white%20shoe%20mens"
 
         // Receive the query image and show it on the screen
         intent.getStringExtra(REQUEST_TARGET_IMAGE_PATH)?.let { absolutePath ->
@@ -83,7 +83,7 @@ class ProductSearchActivity : AppCompatActivity() {
 
         tvRedirect.setOnClickListener {
             Toast.makeText(this, "clicked on redirect.", Toast.LENGTH_SHORT).show()
-            openURL.data =  Uri.parse(amazonLink)
+            openURL.data =  Uri.parse(GlobalVars.AmazonLink)
             startActivity(openURL)
         }
 
@@ -119,7 +119,8 @@ class ProductSearchActivity : AppCompatActivity() {
 
         viewBinding.btnSave.setOnClickListener {
 
-            val savedData = SaveDataModel(GlobalVars.uri.toString(), amazonLink)
+            val savedData = SaveDataModel(GlobalVars.uri.toString(), GlobalVars.AmazonLink)
+            GlobalVars.AmazonLink = null
 
             val databaseReference = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/")
@@ -220,7 +221,13 @@ class ProductSearchAdapter :
         fun bind(product: ProductSearchResult) {
             with(itemView) {
                 findViewById<TextView>(R.id.tvProductScore).text = String.format("Similarity Score: %.2f", (product.score * 100)) + "%" //"Similarity score: ${ceil(product.score * 100)}%"
-                findViewById<TextView>(R.id.tvProductLabel).text = "${product.label}"
+                if (GlobalVars.AmazonLink == null){
+                    var delimiter = "category - "
+                    GlobalVars.AmazonLink =
+                        "http://www.amazon.com/gp/mas/dl/android?s=" + GlobalVars.itemColor + "%20" + GlobalVars.genderTxt_Global + "%20" + product.label.split(delimiter)[1] + "%20" + "Size ="
+                }
+
+                //findViewById<TextView>(R.id.tvProductLabel).text = "${product.label}"
                 // Show the image using Glide
                 Glide.with(itemView).load(product.imageUri).into(findViewById(R.id.ivProduct))
             }
