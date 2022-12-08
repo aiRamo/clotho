@@ -24,7 +24,7 @@
     </string-array>
 
     <string-array name = "colorList" >
-        <item>Select This</item>
+        <item>Select Color</item>
         <item>White</item>
         <item>Black</item>
         <item>Brown</item>
