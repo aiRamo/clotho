@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:padding="10dp"
     android:id="@+id/spinnerStyle"
-    android:text="Gender"
-    android:textSize="20sp"
-    android:textColor="@color/white_v2"
+    android:textSize="24sp"
+    android:textColor="@color/blue"
+    android:textStyle="normal"
     android:layout_height="match_parent">
 
 </CheckedTextView>

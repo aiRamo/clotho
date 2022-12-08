@@ -72,17 +72,21 @@
         android:text="𝙻𝙾𝙶 𝙸𝙽" />
 
     <TextView
+        android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forgotpass"
         android:layout_below="@id/loginbtn"
-        android:text="𝙵𝚘𝚛𝚐𝚘𝚝 𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍"
-        android:textSize="20dp"
-        android:textColor= "@color/blue_v2"
-        android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_margin="1dp"
-        />
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:clickable="true"
+        android:minHeight="48dp"
+        android:text="𝙵𝚘𝚛𝚐𝚘𝚝 𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍"
+        android:textColor="@color/blue_v2"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signup"
@@ -94,8 +98,6 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-
-
         android:backgroundTint="@color/blue"
         android:text=" 𝚂𝙸𝙶𝙽 𝚄𝙿"
         android:textColor="@color/white_v2"

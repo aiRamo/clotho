@@ -2,12 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GenderSpinner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#111619"
+    android:background="#FEFEFA"
     tools:context=".Registration"
     tools:ignore="LabelFor">
 
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Last name"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Last name"
+        android:ems="10"
+        android:hint="@string/prompt_email"
+        android:inputType="textPersonName"
+
+        android:minHeight="48dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
 
     <TextView
         android:id="@+id/Title"
@@ -15,130 +51,122 @@
         android:layout_height="wrap_content"
         android:text="@string/title_activity_registration"
         android:textAlignment="center"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/blue"
         android:textColorHighlight="@color/blue"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/register_button"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
-        android:textColor="@android:color/white"/>
+        app:layout_constraintVertical_bias="0.92" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextPersonName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:autofillHints="First name"
         android:ems="10"
+        android:hint="Full Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="First name"
-        android:textColorHint="#FAF8F8"
-        android:textColor="#FAF8F8"
+        android:textColor="@color/blue"
 
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColorHint="@color/blue"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintEnd_toEndOf="@+id/Title"
+        app:layout_constraintStart_toStartOf="@+id/Title"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
+
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints="Last name"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:hint="@string/prompt_lastname"
-        android:textColorHint="#FAF8F8"
-        android:textColor="#FAF8F8"
-
-        app:layout_constraintBottom_toTopOf="@+id/phoneNumberText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <EditText
-        android:id="@+id/phoneNumberText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints="Last name"
-        android:ems="10"
-        android:hint="@string/prompt_phoneNumber"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="#FAF8F8"
-        android:textColorHint="#FAF8F8"
-
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints="Email address"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:hint="@string/prompt_email"
-        android:textColorHint="#FAF8F8"
-        android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.48000002" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:autofillHints="Password"
         android:ems="10"
-        android:minHeight="48dp"
         android:hint="@string/prompt_password"
-        android:textColorHint="#FAF8F8"
-        android:textColor="#FAF8F8"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.59000003" />
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
+    <EditText
+        android:id="@+id/editTextPassword2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Password"
+        android:ems="10"
+        android:hint="@string/confirmation"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <EditText
+        android:id="@+id/editTextPhonenumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Password"
+        android:ems="10"
+        android:hint="@string/prompt_phoneNumber"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword2" />
 
     <Spinner
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/spinner4"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginStart="-8dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="Gender"
-        android:entries="@array/spinner_items"
-        android:minHeight="48dp"
+        android:contentDescription="@string/gender_selection"
+        android:text="@string/gender_selection"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUsername"
+        app:layout_constraintStart_toStartOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumberText" />
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

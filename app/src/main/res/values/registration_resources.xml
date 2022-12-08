@@ -1,7 +1,8 @@
 <resources>
-    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_registration">𝙍𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙩𝙞𝙤𝙣</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
+    <string name="confirmation">Confirm Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
@@ -16,5 +17,5 @@
     <string name="pants_selector">Pants</string>
     <string name="shoes_selector">Shoes</string>
     <string name="shirt_selector">Shirts</string>
-    <string name="category_title">Category Selection</string>
+    <string name="category_title">𝙎𝙚𝙡𝙚𝙘𝙩 𝙄𝙩𝙚𝙢 𝘾𝙤𝙡𝙤𝙧</string>
 </resources>
