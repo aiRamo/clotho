@@ -21,8 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<DataSnapshot> savedData = new ArrayList<>();
 
+    ArrayList<ImageButton> imageButtonList = new ArrayList<>();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -34,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton button4 = (ImageButton) findViewById(R.id.outfit4);
         final ImageButton button5 = (ImageButton) findViewById(R.id.outfit5);
 
-
-        ArrayList<ImageButton> imageButtonList = new ArrayList<>();
 
         imageButtonList.add(button1);
         imageButtonList.add(button2);
@@ -77,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         //Category Selection
         categoryButton.setOnClickListener( new View.OnClickListener()  {
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(MainActivity.this, CategorySelector.class));
                 System.out.println("Category Button Clicked");
             }
@@ -140,5 +145,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 }

@@ -23,7 +23,6 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings.Global
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -125,13 +124,39 @@ class ProductSearchActivity : AppCompatActivity() {
             val databaseReference = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://clotho-a9c47-default-rtdb.firebaseio.com/")
 
+            val timeEpoch = getTimeEpoch()
+
             databaseReference.child("users").child(GlobalVars.userNameTxt_Global)
-                .child("Saved Searches").child(getTimeEpoch()).setValue(savedData)
+                .child("Saved Searches").child(timeEpoch).setValue(savedData)
                 .addOnCompleteListener {
-                    Toast.makeText(this, "data insert success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "data insert success", Toast.LENGTH_SHORT)
                 }.addOnFailureListener { err ->
-                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG)
                 }
+
+
+            // will come back to later in tutorial
+            databaseReference.child("users")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        // check if username and password exist in firebase database
+
+                        //Get data in datasnapshot
+                        for (dsp in snapshot.child(GlobalVars.userNameTxt_Global)
+                            .child("Saved Searches").children) {
+                            if (GlobalVars.savedCount < 5) {
+                                GlobalVars.savedData.add(dsp)
+
+                                GlobalVars.savedCount++
+                            }
+                        }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {}
+                })
+            Toast.makeText(this, GlobalVars.savedData.get(GlobalVars.savedCount-1).child("imageuri").value.toString(), Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
 
         }
     }

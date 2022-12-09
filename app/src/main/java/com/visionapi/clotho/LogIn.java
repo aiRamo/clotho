@@ -36,7 +36,6 @@ public class LogIn extends AppCompatActivity{
         final EditText Password = (EditText) findViewById(R.id.Password);
         final MaterialButton login = (MaterialButton) findViewById(R.id.loginbtn);
         final MaterialButton signup = (MaterialButton) findViewById(R.id.signup);
-        final MaterialButton forgotpass = (MaterialButton) findViewById(R.id.forgotpass);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,8 +82,6 @@ public class LogIn extends AppCompatActivity{
                                          }
                                      }
 
-                                     Toast.makeText(LogIn.this, "AMAZON: " + savedImages.get(1).child("amazonLink").getValue(), Toast.LENGTH_LONG).show();
-                                     Toast.makeText(LogIn.this, "URI: " + savedImages.get(0).child("imageuri").getValue(), Toast.LENGTH_LONG).show();
                                      startActivity(new Intent(LogIn.this,MainActivity.class));
                                      finish();
                                  }
@@ -118,15 +115,6 @@ public class LogIn extends AppCompatActivity{
 
         // when forgot password button is clicked
         // will send user to forgot password class page
-        forgotpass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // opens Registration Activity
-                startActivity(new Intent(LogIn.this,ForgotPassword.class));
-                // might need a break
-                // break;
-            }
-        });
 
 
     }
